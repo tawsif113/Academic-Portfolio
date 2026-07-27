@@ -98,46 +98,47 @@ export default function Home() {
           <article className="featured">
             <div className="featured-copy">
               <div className="status">
-                <span>Active study</span> NSL-KDD · Binary task · MLP
+                <span>Advanced implementation</span> NSL-KDD · MIA · DP-SGD
               </div>
               <h3>
-                A Reproducible Privacy–Utility Audit for ML-Based Network
+                Privacy–Utility Tradeoffs in Differentially Private Network
                 Intrusion Detection
               </h3>
               <p>
-                The study connects IDS-specific utility with a
-                shadow-calibrated membership-inference audit, then builds
-                toward formally accounted DP-SGD. The scope is intentionally
-                fixed to one dataset, one private model family, and explicit
-                threat models.
+                The reproducible pipeline now includes the locked IDS baseline,
+                a five-shadow membership-inference audit, PyTorch parity, and a
+                formally accounted Opacus DP-SGD feasibility run. The full
+                privacy–utility sweep and repeated-run analysis remain the next
+                evidence gate.
               </p>
               <Link className="text-link" href="/research">
                 Read the project record <Arrow />
               </Link>
             </div>
             <div className="evidence">
-              <p className="eyebrow">Verified baseline evidence</p>
+              <p className="eyebrow">Verified feasibility evidence</p>
               <div className="metrics">
                 <div>
-                  <strong>76.91%</strong>
-                  <span>Recall</span>
+                  <strong>7.999</strong>
+                  <span>Actual epsilon</span>
                 </div>
                 <div>
-                  <strong>23.09%</strong>
-                  <span>FNR</span>
+                  <strong>1.13e−5</strong>
+                  <span>Delta</span>
                 </div>
                 <div>
-                  <strong>84.08%</strong>
-                  <span>F1</span>
+                  <strong>66.20%</strong>
+                  <span>DP smoke recall</span>
                 </div>
                 <div>
-                  <strong>0.28</strong>
-                  <span>F2 threshold</span>
+                  <strong>0.5029</strong>
+                  <span>Baseline MIA AUC</span>
                 </div>
               </div>
               <small>
-                Preliminary non-private MLP utility on KDDTest+. Not evidence of
-                differential privacy or reduced leakage.
+                Single-run feasibility evidence. It validates implementation
+                and accounting, but does not yet establish a privacy–utility
+                frontier or reduced membership leakage.
               </small>
             </div>
           </article>
