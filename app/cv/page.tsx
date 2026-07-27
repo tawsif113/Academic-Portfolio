@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Arrow, Footer, Header, Intro, Tags } from "../site-shell";
+import { Arrow, Download, Footer, Header, Intro, Tags } from "../site-shell";
 
 export const metadata: Metadata = {
   title: "Academic CV",
@@ -35,7 +35,7 @@ export default function Cv() {
         <Intro
           eyebrow="Curriculum vitae"
           title="Research, education, and selected technical work."
-          description="This HTML overview is intentionally concise. A reconciled application-ready PDF will be added after the final CV audit."
+          description="This page provides a concise overview. Download the complete academic CV for publications, research evidence, professional experience, and technical preparation."
         />
         <section className="content shell cv-grid">
           <aside className="cv-aside">
@@ -53,6 +53,13 @@ export default function Cv() {
               ]}
             />
             <a
+              className="button primary cv-download"
+              href="/Kazi_Md_Tawsif_Rahman_Academic_CV.pdf"
+              download="Kazi_Md_Tawsif_Rahman_Academic_CV.pdf"
+            >
+              Download academic CV <Download />
+            </a>
+            <a
               className="text-link"
               href="https://github.com/tawsif113"
               target="_blank"
@@ -69,9 +76,10 @@ export default function Cv() {
                 date="2026 — Present"
                 title="Privacy–Utility Audit for ML-Based Network Intrusion Detection"
               >
-                Designing a reproducible NSL-KDD study combining
-                validation-tuned IDS evaluation, membership-inference auditing,
-                and a gated path toward formally accounted DP-SGD.
+                Completed a locked NSL-KDD utility baseline, five-shadow
+                membership-inference audit, PyTorch parity check, and formally
+                accounted DP-SGD feasibility run. The full privacy-budget
+                sweep and repeated-run analysis remain in progress.
               </Entry>
               <Entry
                 date="2024"

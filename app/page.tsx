@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Arrow, Footer, Header } from "./site-shell";
+import { Arrow, Download, Footer, Header } from "./site-shell";
 
 const publications = [
   {
@@ -42,6 +42,13 @@ export default function Home() {
               <Link className="button primary" href="/research">
                 Explore my research <Arrow />
               </Link>
+              <a
+                className="button secondary"
+                href="/Kazi_Md_Tawsif_Rahman_Academic_CV.pdf"
+                download="Kazi_Md_Tawsif_Rahman_Academic_CV.pdf"
+              >
+                Download CV <Download />
+              </a>
               <a
                 className="button secondary"
                 href="https://github.com/tawsif113"
@@ -224,8 +231,15 @@ export default function Home() {
             operational evidence agree.
           </h2>
           <div className="buttons center">
-            <Link className="button primary" href="/cv">
-              View academic CV <Arrow />
+            <a
+              className="button primary"
+              href="/Kazi_Md_Tawsif_Rahman_Academic_CV.pdf"
+              download="Kazi_Md_Tawsif_Rahman_Academic_CV.pdf"
+            >
+              Download academic CV <Download />
+            </a>
+            <Link className="button secondary" href="/cv">
+              View CV online <Arrow />
             </Link>
             <a
               className="button secondary"

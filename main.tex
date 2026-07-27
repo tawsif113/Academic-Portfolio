@@ -1,10 +1,8 @@
 \documentclass[11pt,letterpaper]{article}
 
-% =========================
-% Academic CV for PhD Outreach
+% Academic CV for PhD outreach
 % Candidate: Kazi Md. Tawsif Rahman
 % Target: Fall 2027 funded PhD applications in the USA
-% =========================
 
 \usepackage[letterpaper,margin=0.68in]{geometry}
 \usepackage{enumitem}
@@ -13,9 +11,16 @@
 \usepackage{xcolor}
 \usepackage{tabularx}
 \usepackage{array}
+\usepackage{microtype}
 
 \definecolor{darkblue}{HTML}{17365D}
-\definecolor{muted}{HTML}{555555}
+
+\hypersetup{
+  pdftitle={Academic CV -- Kazi Md. Tawsif Rahman},
+  pdfauthor={Kazi Md. Tawsif Rahman},
+  pdfsubject={Academic curriculum vitae},
+  pdfkeywords={network security, privacy-preserving machine learning, membership inference, differential privacy}
+}
 
 \titleformat{\section}
   {\large\bfseries\color{darkblue}}
@@ -38,113 +43,110 @@
 
 \begin{document}
 
-% =========================
-% Header
-% =========================
-
 {\LARGE \textbf{Kazi Md. Tawsif Rahman}}\\[3pt]
 Dhaka, Bangladesh \\
 \href{mailto:tawsifcse113@gmail.com}{tawsifcse113@gmail.com} \; | \;
 +880 1533-406937 \; | \;
-\href{https://linkedin.com/in/tawsifrahman113}{linkedin.com/in/tawsifrahman113} \; | \;
+\href{https://linkedin.com/in/tawsifrahman113}{linkedin.com/in/tawsifrahman113} \\
 \href{https://github.com/tawsif113}{github.com/tawsif113} \; | \;
-Portfolio: \href{https://tawsif-portfolio.flaro-tech.com/}{tawsif-portfolio.com}
-
-% =========================
-% Academic Profile
-% =========================
+\href{https://tawsif-portfolio.flaro-tech.com/}{tawsif-portfolio.flaro-tech.com}
 
 \section*{Academic Profile}
 
-Computer Science graduate and backend systems engineer preparing for Fall 2027 funded PhD applications. Research interests sit at the intersection of network security, privacy-preserving machine learning, trustworthy AI, and data-intensive software systems. Published work includes machine-learning-based insurance fraud detection and an IEEE conference paper on an insurance awareness mobile application with fraud detection and policy-selection features. Industry experience includes production backend systems involving REST APIs, PostgreSQL, Redis, RabbitMQ, workflow automation, rule-based assignment, audit logging, and reliable state transitions.
-
-% =========================
-% Research Interests
-% =========================
+Computer Science graduate and backend systems engineer conducting applied empirical
+research at the intersection of network security, privacy-preserving machine
+learning, and trustworthy evaluation. Current work develops a reproducible
+privacy--utility audit for machine-learning-based network intrusion detection,
+combining IDS-specific evaluation, shadow-model membership-inference auditing, and
+formally accounted DP-SGD. Published work includes machine-learning-based insurance
+fraud detection and an IEEE conference paper on an insurance awareness and
+decision-support application.
 
 \section*{Research Interests}
 
-\textbf{Primary:} network security; privacy-preserving machine learning; trustworthy and robust AI; machine-learning-based intrusion detection systems.\\
-\textbf{Secondary:} backend/distributed systems; data systems; software engineering for reliable, auditable, and scalable applications.
-
-% =========================
-% Research Direction
-% =========================
+\textbf{Primary:} network security; privacy-preserving machine learning;
+membership-inference auditing; trustworthy evaluation of security-critical
+machine learning.\\
+\textbf{Supporting:} dependable backend and data-intensive systems; reproducible
+experimental software; reliable and auditable services.
 
 \section*{Research Direction for PhD Study}
 
-I am interested in building practical and reproducible security/ML systems that evaluate the tradeoff between model utility, privacy leakage, and robustness. A near-term direction is to reproduce and extend privacy-preserving ML methods for network intrusion detection using public benchmark datasets, then evaluate both predictive performance and attack-aware metrics such as membership inference risk. Long term, I want to work on deployable trustworthy AI systems where privacy, robustness, and reliability are measured together rather than treated as separate goals.
-
-% =========================
-% Education
-% =========================
+I am interested in practical security and machine-learning systems in which model
+utility, privacy leakage, and formal protection are evaluated under one explicit,
+reproducible protocol. My current study asks whether formally accounted DP-SGD can
+reduce measurable training-membership leakage in a tabular intrusion detector
+while retaining operationally acceptable Recall and false-negative rate. Long
+term, I want to develop deployable trustworthy learning systems whose privacy and
+reliability claims remain aligned with empirical evidence.
 
 \section*{Education}
 
 \cvitem{Chittagong University of Engineering and Technology (CUET), Bangladesh}{Sep 2024}
 B.Sc. in Computer Science and Engineering \hfill CGPA: 3.59 / 4.00
 
-% =========================
-% Publications
-% =========================
-
-\section*{Publications and Scholarly Work}
+\section*{Publications}
 
 \begin{enumerate}
-    \item \paperlabel{Journal Article} Kazi Md. Tawsif Rahman and Chowdhury Mahfuzul Hoq. ``An Automated System for Detecting Property Insurance Fraud Using Machine Learning.'' \textit{International Journal of Mathematical Sciences and Computing (IJMSC)}, 2024. DOI: \href{https://doi.org/10.5815/ijmsc.2024.03.02}{10.5815/ijmsc.2024.03.02}.
+    \item \paperlabel{Journal Article} Kazi Md. Tawsif Rahman and Chowdhury
+    Mahfuzul Hoq. ``An Automated System for Detecting Property Insurance Fraud
+    Using Machine Learning.'' \textit{International Journal of Mathematical
+    Sciences and Computing (IJMSC)}, 2024.
+    DOI: \href{https://doi.org/10.5815/ijmsc.2024.03.02}{10.5815/ijmsc.2024.03.02}.
 
-    \item \paperlabel{IEEE Conference Paper} Mahfuzulhoq Chowdhury, Kazi Md. Tawsif Rahman, and Hossain Ahmad Maruf. ``Whistle Blower: An Insurance Awareness Mobile Application with Insurance Policy Selection, Fraud Detection, Critical Help, Complaint Features.'' \textit{2024 8th International Conference on Computational System and Information Technology for Sustainable Solutions (CSITSS)}, pp. 1--6, 2024. IEEE. DOI: \href{https://doi.org/10.1109/csitss64042.2024.10817002}{10.1109/CSITSS64042.2024.10817002}.
+    \item \paperlabel{IEEE Conference Paper} Mahfuzulhoq Chowdhury, Kazi Md.
+    Tawsif Rahman, and Hossain Ahmad Maruf. ``Whistle Blower: An Insurance
+    Awareness Mobile Application with Insurance Policy Selection, Fraud
+    Detection, Critical Help, Complaint Features.'' \textit{2024 8th
+    International Conference on Computational System and Information Technology
+    for Sustainable Solutions (CSITSS)}, pp. 1--6, 2024.
+    DOI: \href{https://doi.org/10.1109/CSITSS64042.2024.10817002}{10.1109/CSITSS64042.2024.10817002}.
 \end{enumerate}
 
-% =========================
-% Research Preparation
-% =========================
+\newpage
+\section*{Research Experience}
 
-\section*{Research Preparation and Evidence}
-
+\project{A Reproducible Privacy--Utility Audit for ML-Based Network Intrusion Detection}{2026 -- Present}
 \begin{itemize}
-    \item \textbf{Publication experience:} contributed to two published research outputs involving applied machine learning, fraud detection, insurance technology, and software-supported decision assistance.
-    \item \textbf{Implementation depth:} production backend experience with modular services, persistent data models, validation, caching, asynchronous processing, audit logs, and workflow-state consistency.
-    \item \textbf{Experiment-readiness:} preparing reproducible security/ML experiments involving public NIDS datasets, baseline classifiers, differential privacy settings, and membership inference evaluation.
-    \item \textbf{Research writing:} able to present technical problems through problem framing, method description, evaluation logic, and limitations, supported by existing publication experience.
+    \item Designed a locked NSL-KDD binary-classification protocol with
+    validation-only threshold selection and an untouched KDDTest+ evaluation
+    split.
+    \item Established Random Forest, XGBoost, and MLP utility baselines; the
+    selected non-private MLP achieved 76.91\% Recall, 23.09\% FNR, and 84.08\%
+    F1 on KDDTest+ at a validation-selected threshold of 0.28.
+    \item Completed a five-shadow-model membership-inference audit with
+    score-only and label-aware features. The strongest overall baseline attack
+    was near chance (ROC-AUC approximately 0.5029), establishing an important
+    floor-effect limitation for later privacy comparisons.
+    \item Completed PyTorch parity and an Opacus DP-SGD feasibility run with
+    explicit accounting at $\varepsilon=7.9986$ and
+    $\delta=1.134\times10^{-5}$. The single smoke test achieved 66.20\% Recall,
+    33.80\% FNR, 76.80\% F1, and 91.93\% PR-AUC.
+    \item Current work: execute the full privacy-budget sweep, apply the same
+    membership audit to every DP model, and estimate uncertainty across
+    repeated runs. The feasibility result is not yet evidence of reduced
+    membership leakage.
+    \item Repository:
+    \href{https://github.com/tawsif113/privacy-utility-dp-ids}{github.com/tawsif113/privacy-utility-dp-ids}.
 \end{itemize}
 
-% =========================
-% Research Projects
-% =========================
-
-\section*{Research Projects}
-
-\project{Privacy-Utility Evaluation for Machine-Learning-Based Network Intrusion Detection}{Planned / In Progress}
+\project{Insurance Fraud Detection Using Machine Learning}{Published, 2024}
 \begin{itemize}
-    \item Reproducing and analyzing privacy-preserving ML methods for network intrusion detection using public NIDS datasets such as NSL-KDD, UNSW-NB15, or CIC-IDS-2017.
-    \item Planned evaluation includes baseline classifier performance, privacy-utility tradeoff under differential privacy, and attack-aware metrics such as membership inference risk.
-    \item Research goal: build a reproducible benchmark connecting network security, privacy-preserving ML, and practical ML-system evaluation.
-    \item Planned output: GitHub repository, experiment report, result tables, and professor-outreach summary.
+    \item Developed an automated property-insurance fraud-detection approach
+    using machine-learning methods.
+    \item Published in \textit{International Journal of Mathematical Sciences
+    and Computing}; demonstrates applied ML, problem formulation, technical
+    writing, and evaluation-oriented research.
 \end{itemize}
 
-\project{Insurance Fraud Detection Using Machine Learning}{Published Research Project}
+\project{Whistle Blower: Insurance Awareness and Decision-Support Application}{Published, 2024}
 \begin{itemize}
-    \item Developed an automated fraud-detection approach for property insurance using machine-learning methods.
-    \item Published in \textit{International Journal of Mathematical Sciences and Computing}; demonstrates applied ML, problem formulation, technical writing, and evaluation-oriented work.
-    \item Research relevance: applied machine learning, fraud analytics, data-driven decision support, and trustworthy financial/insurance technology.
+    \item Co-authored an IEEE CSITSS paper on a mobile application combining
+    insurance awareness, policy selection, fraud detection, critical help, and
+    complaint features.
+    \item Research relevance: applied software systems, fraud detection,
+    consumer-facing decision support, and human-centered financial technology.
 \end{itemize}
-
-\project{Whistle Blower: Insurance Awareness and Decision-Support Mobile Application}{IEEE Conference Research Project}
-\begin{itemize}
-    \item Co-authored IEEE CSITSS 2024 paper on a mobile application combining insurance awareness, policy selection, fraud detection, critical help, and complaint features.
-    \item Research relevance: applied software systems, fraud detection, civic/consumer-facing decision support, and human-centered financial technology.
-\end{itemize}
-
-\project{Reproducible Experiment Framework for Security/ML Studies}{Planned}
-\begin{itemize}
-    \item Planned framework for organizing datasets, model training, evaluation scripts, metrics, and experiment logs for security-oriented ML research.
-    \item Intended to support repeatable experiments, result comparison, clean reporting, and future PhD application research projects.
-\end{itemize}
-
-% =========================
-% Professional Experience
-% =========================
 
 \section*{Professional Experience}
 
@@ -152,74 +154,58 @@ B.Sc. in Computer Science and Engineering \hfill CGPA: 3.59 / 4.00
 
 \textbf{CRM Platform}
 \begin{itemize}
-    \item Designed and implemented backend services for accounts, contacts, leads, opportunities, quotes, campaigns, territories, products, and pipelines, delivering 168 REST endpoints across 30 controllers.
-    \item Built configurable rule-based assignment for leads and opportunities, including priority, schedules, conditional routing, rotation rules, duplicate checks, and validation of supported fields/operators/values.
-    \item Improved Kanban movement scalability by replacing full-column reordering with fixed-length order keys, reducing movement updates from column-wide ranking work to single-rank assignment.
-    \item Implemented Kanban board, column, card, metadata, and movement APIs with access control, idempotent moves, audit logs, and timeline entries.
-    \item Added opportunity pipeline-stage Kanban support by synchronizing board columns with pipeline stages and validating allowed transitions before state changes.
+    \item Designed and implemented backend services for accounts, contacts,
+    leads, opportunities, quotes, campaigns, territories, products, and
+    pipelines, delivering 168 REST endpoints across 30 controllers.
+    \item Built configurable rule-based assignment for leads and opportunities,
+    including priority, schedules, conditional routing, rotation rules,
+    duplicate checks, and field/operator/value validation.
+    \item Improved Kanban movement scalability by replacing full-column
+    reordering with fixed-length order keys, reducing a move to a single-rank
+    assignment.
+    \item Implemented access-controlled Kanban operations with idempotent moves,
+    transition validation, audit logs, and timeline entries.
 \end{itemize}
 
+\newpage
 \textbf{Ticketing System}
 \begin{itemize}
-    \item Built backend services for ticket creation, updates, search, comments, forwarding, assignment rules, teams, SLA/KPI tracking, feedback, notifications, and metadata, delivering 96 REST endpoints across 21 controllers.
-    \item Implemented least-loaded team routing using Redis-backed workload counters and a min-heap to assign tickets to resolvers with the fewest open tickets.
-    \item Added absence-reliever handling so unavailable resolvers are skipped during assignment/reassignment and tickets fall back to relievers or other available team members.
-    \item Designed SLA/KPI tracking through assignee-only stage updates, comment-based progress updates, status changes, notifications, and activity logs.
-    \item Maintained resolver workload consistency across PostgreSQL and Redis through asynchronous updates after ticket creation, reassignment, and resolution.
+    \item Built backend services for ticket creation, search, comments,
+    forwarding, assignment rules, teams, SLA/KPI tracking, feedback,
+    notifications, and metadata, delivering 96 REST endpoints across 21
+    controllers.
+    \item Implemented least-loaded team routing using Redis-backed workload
+    counters and a min-heap, with absence-reliever handling for unavailable
+    resolvers.
+    \item Maintained resolver workload consistency across PostgreSQL and Redis
+    through asynchronous updates after ticket creation, reassignment, and
+    resolution.
 \end{itemize}
-
-% =========================
-% Technical and Research Skills
-% =========================
 
 \section*{Technical and Research Skills}
 
 \begin{tabularx}{\textwidth}{>{\bfseries}p{0.25\textwidth} X}
-Programming & Java, SQL, C, C++; add Python if actively used in research experiments \\
-Backend / Systems & Spring Boot, Spring Security, Spring Data JPA, Hibernate, Bean Validation, Spring Modulith, Gradle, Docker, Linux \\
-API Design & REST APIs, OpenAPI/Swagger, MapStruct, DTO design, request validation, structured error handling \\
-Data Systems & PostgreSQL, Flyway migrations, Redis, JSONB, indexing, repository queries \\
-Messaging / Jobs & RabbitMQ, asynchronous processing, retry handling, Quartz scheduling \\
-Testing / Quality & JUnit 5, Mockito, API testing, Git, reproducible development workflow \\
-Research Methods & Literature review, baseline reproduction, experiment design, result comparison, technical writing; add statistical testing/ML libraries after use \\
-Security/ML Prep & Planned work with NIDS datasets, differential privacy, membership inference auditing, and privacy-utility evaluation \\
+Programming & Python, Java, SQL, C, C++ \\
+ML / Privacy & scikit-learn, XGBoost, PyTorch, Opacus, DP-SGD, membership-inference auditing, threshold selection \\
+Research Methods & Literature review, experimental design, baseline reproduction, threat-model specification, privacy accounting, reproducibility manifests, result analysis, technical writing \\
+Backend / Systems & Spring Boot, Spring Security, Spring Data JPA, Hibernate, Spring Modulith, REST APIs, Gradle, Docker, Linux \\
+Data / Messaging & PostgreSQL, MongoDB, Redis, RabbitMQ, Flyway, JSONB, asynchronous processing, retry handling \\
+Testing / Quality & JUnit 5, Mockito, API testing, Git, reproducible development workflows \\
 \end{tabularx}
-
-% =========================
-% Awards and Achievements
-% =========================
 
 \section*{Awards and Achievements}
 
 \begin{itemize}
-    \item Codeforces Specialist; reached 1500+ rating in competitive programming.
+    \item Codeforces Specialist; reached a rating above 1500.
     \item Finalist, CUET IUPC 2024.
     \item Finalist, CUET IUPC 2023.
     \item Finalist, CUET Tech Carnival 2020.
 \end{itemize}
 
-% =========================
-% Selected Coursework
-% =========================
-
 \section*{Selected Coursework}
 
-Algorithms and Data Structures; Database Systems; Computer Networks; Operating Systems; Software Engineering; Artificial Intelligence; Machine Learning; Information Security. \textit{Edit this list to match your official transcript.}
-
-% =========================
-% Academic Service / Mentoring
-% =========================
-
-% \section*{Academic Service, Teaching, and Mentoring}
-
-% \textit{Add only if true before outreach: teaching assistant roles, lab assistant roles, mentoring juniors, programming-contest training, workshop leadership, peer-review assistance, or research-group volunteering. If none, remove this section before final submission.}
-
-% % =========================
-% % References
-% % =========================
-
-% \section*{References}
-
-% Available upon request. \textit{For applications, replace this line with recommender names only if the program asks for references on the CV.}
+Algorithms and Data Structures; Database Systems; Computer Networks; Operating
+Systems; Software Engineering; Artificial Intelligence; Machine Learning;
+Information Security.
 
 \end{document}

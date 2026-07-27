@@ -1,4 +1,5 @@
 import assert from "node:assert/strict";
+import { readFile } from "node:fs/promises";
 import test from "node:test";
 
 const developmentPreviewMeta =
@@ -29,5 +30,25 @@ test("renders development preview metadata", async () => {
     response.headers.get("content-type") ?? "",
     /^text\/html\b/i,
   );
-  assert.match(await response.text(), developmentPreviewMeta);
+  const html = await response.text();
+  assert.match(html, developmentPreviewMeta);
+  assert.match(
+    html,
+    /href=["']\/Kazi_Md_Tawsif_Rahman_Academic_CV\.pdf["']/i,
+  );
+  assert.match(
+    html,
+    /download=["']Kazi_Md_Tawsif_Rahman_Academic_CV\.pdf["']/i,
+  );
+});
+
+test("packages the downloadable academic CV as a valid PDF", async () => {
+  const pdf = await readFile(
+    new URL(
+      "../dist/client/Kazi_Md_Tawsif_Rahman_Academic_CV.pdf",
+      import.meta.url,
+    ),
+  );
+
+  assert.equal(pdf.subarray(0, 5).toString("ascii"), "%PDF-");
 });

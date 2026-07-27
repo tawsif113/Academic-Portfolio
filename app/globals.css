@@ -421,6 +421,7 @@ td:last-child { font-family: var(--mono), monospace; }
 
 .cv-grid { display: grid; grid-template-columns: .65fr 1.35fr; gap: 80px; }
 .cv-aside { align-self: start; position: sticky; top: 110px; }
+.cv-download { margin-top: 24px; }
 .cv-main > section + section { margin-top: 56px; }
 .cv-main > section > h2 {
   margin: 0 0 22px;

@@ -17,6 +17,18 @@ export function Arrow() {
   );
 }
 
+export function Download() {
+  return (
+    <svg className="arrow" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+      <path
+        d="M10 3v9m0 0 4-4m-4 4L6 8M4 16h12"
+        stroke="currentColor"
+        strokeWidth="1.6"
+      />
+    </svg>
+  );
+}
+
 export function Header({ active }: { active: Page }) {
   return (
     <header className="header">
@@ -58,7 +70,12 @@ export function Footer() {
             GitHub
           </a>
           <Link href="/research">Research</Link>
-          <Link href="/cv">CV</Link>
+          <a
+            href="/Kazi_Md_Tawsif_Rahman_Academic_CV.pdf"
+            download="Kazi_Md_Tawsif_Rahman_Academic_CV.pdf"
+          >
+            Download CV
+          </a>
         </div>
         <p>© 2026 · Dhaka, Bangladesh</p>
       </div>

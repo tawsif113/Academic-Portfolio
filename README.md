@@ -11,7 +11,8 @@ focused on privacy-preserving machine learning and network security.
   and limitations
 - **Publications** — selected peer-reviewed work and research trajectory
 - **Systems** — sanitized engineering cases relevant to experimental systems
-- **CV** — concise HTML academic CV overview
+- **CV** — concise HTML overview plus a downloadable academic CV generated
+  from `main.tex`
 
 ## Research claim policy
 
@@ -43,6 +44,16 @@ npm test
 
 ## Before application use
 
-The final CV PDF, exact publication author order and contribution statements,
-ORCID/Scholar/LinkedIn links, and academic contact address still need to be
-reconciled with their source documents.
+The publication author order, contribution statements, ORCID/Scholar links,
+and preferred academic contact details should be rechecked before application
+submission.
+
+## Academic CV
+
+The public download is generated from `main.tex`:
+
+```bash
+pdflatex -interaction=nonstopmode -halt-on-error \
+  -output-directory=public main.tex
+mv public/main.pdf public/Kazi_Md_Tawsif_Rahman_Academic_CV.pdf
+```
