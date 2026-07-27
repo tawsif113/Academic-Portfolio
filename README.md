@@ -15,11 +15,14 @@ focused on privacy-preserving machine learning and network security.
 
 ## Research claim policy
 
-- The current project is described as a **privacy–utility audit building toward
-  formal DP-SGD**.
+- The locked MIA-ready baseline, five-shadow membership audit, PyTorch parity
+  check, and formally accounted DP-SGD feasibility run are complete.
+- The full DP-SGD privacy-budget sweep, per-model MIA evaluation, and
+  repeated-run analysis remain in progress.
 - Baseline IDS utility is separate from privacy evidence.
-- No claim of differential privacy or reduced membership leakage is made
-  without valid accounting and a completed MIA evaluation.
+- Formal privacy parameters are reported only for the verified feasibility
+  configuration. No broad claim of reduced membership leakage is made before
+  the full sweep and repeated-run evaluation.
 - Planned experiments are visibly distinguished from verified results.
 
 ## Development
@@ -41,5 +44,5 @@ npm test
 ## Before application use
 
 The final CV PDF, exact publication author order and contribution statements,
-ORCID/Scholar/LinkedIn links, academic contact address, and the latest verified
-MIA results still need to be reconciled with their source documents.
+ORCID/Scholar/LinkedIn links, and academic contact address still need to be
+reconciled with their source documents.
