@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Footer, Header, Intro } from "../site-shell";
+import { Arrow, Footer, Header, Intro } from "../site-shell";
 
 export const metadata: Metadata = {
   title: "Research",
@@ -23,8 +23,8 @@ export default function Research() {
       <main>
         <Intro
           eyebrow="Current research"
-          title="Privacy–utility auditing for network intrusion detection."
-          description="An empirical study of whether formally accounted DP-SGD can reduce measurable membership leakage without making a tabular intrusion detector operationally ineffective."
+          title="Privacy–utility tradeoffs in differentially private network intrusion detection."
+          description="A reproducible empirical study combining IDS-specific utility, shadow-calibrated membership inference, and formally accounted DP-SGD for a tabular intrusion detector."
         />
 
         <section className="content shell">
@@ -40,10 +40,11 @@ export default function Research() {
             </div>
             <div>
               <div className="claim">
-                <strong>Claim boundary:</strong> Until DP-SGD is implemented
-                with valid privacy accounting, this work is a privacy–utility
-                audit building toward formal DP-SGD—not a differentially
-                private IDS.
+                <strong>Claim boundary:</strong> Formal DP-SGD implementation
+                and privacy accounting have been established in a feasibility
+                run. A full privacy–utility frontier and a DP-versus-non-private
+                leakage-reduction claim still require Experiment 05 and
+                repeated-run evidence.
               </div>
               <div className="cards">
                 <article>
@@ -100,28 +101,40 @@ export default function Research() {
                 </p>
               </article>
               <article className="active">
-                <small>Active validation</small>
+                <small>Completed · accepted</small>
                 <h3>MIA-ready MLP and baseline membership audit</h3>
                 <p>
-                  The current gate is to reconcile the locked split,
-                  shadow-calibration protocol, manifests, low-FPR metrics, and
-                  bootstrap uncertainty before publishing privacy conclusions.
+                  A locked 70/10/20 split, five shadow models, held-out shadow
+                  calibration, low-FPR metrics, and 1,000 bootstrap repetitions
+                  found weak measurable overall leakage under the evaluated
+                  attacks.
                 </p>
               </article>
-              <article>
-                <small>Gated next</small>
+              <article className="done">
+                <small>Completed · feasibility passed</small>
                 <h3>DP-SGD feasibility and accounting</h3>
                 <p>
-                  A small Opacus smoke test must verify clipping, sampling,
-                  accounting, and reproducible epsilon before a full sweep.
+                  PyTorch parity and Opacus compatibility passed. A five-epoch
+                  DP-SGD smoke run produced explicit PRV-accounted privacy
+                  parameters and reproducible utility outputs.
+                </p>
+              </article>
+              <article className="active">
+                <small>Current gate</small>
+                <h3>Full DP-SGD sweep and membership audit</h3>
+                <p>
+                  Experiment 05 must compare multiple privacy budgets, audit
+                  each trained model with the locked MIA protocol, and preserve
+                  per-run accounting, IDS metrics, raw results, and manifests.
                 </p>
               </article>
               <article>
-                <small>Planned</small>
-                <h3>Privacy–utility frontier and repeated runs</h3>
+                <small>Final analysis</small>
+                <h3>Repeated runs and privacy–utility frontier</h3>
                 <p>
-                  Compare non-private and DP-SGD models across utility, leakage,
-                  low-FPR risk, and uncertainty only after protocol validation.
+                  Stability analysis will determine whether observed utility
+                  and leakage differences are robust enough to support the
+                  final research claims.
                 </p>
               </article>
             </div>
@@ -131,30 +144,35 @@ export default function Research() {
         <section className="content shell">
           <div className="two-col">
             <div className="side">
-              <p className="eyebrow">Baseline result</p>
-              <h2>What is currently supported.</h2>
+              <p className="eyebrow">Verified evidence</p>
+              <h2>What the completed experiments support.</h2>
               <p>
-                KDDTest+ was used for final IDS utility after selecting the
-                operating threshold on validation data.
+                Every number below is drawn from committed result CSVs or
+                manifests. KDDTest+ thresholds were selected on validation
+                data.
               </p>
             </div>
             <div>
               <table>
                 <thead>
                   <tr>
-                    <th>Setting</th>
-                    <th>Metric</th>
+                    <th>Experiment</th>
+                    <th>Verified result</th>
                     <th>Result</th>
                   </tr>
                 </thead>
                 <tbody>
                   {[
-                    ["MLP · threshold 0.28", "Accuracy", "83.41%"],
-                    ["MLP · threshold 0.28", "Recall", "76.91%"],
-                    ["MLP · threshold 0.28", "F1", "84.08%"],
-                    ["MLP · threshold 0.28", "False Negative Rate", "23.09%"],
+                    ["Baseline MIA", "Strongest overall attack AUC", "≈ 0.5029"],
+                    ["PyTorch parity", "F1 absolute difference", "1.26 pp"],
+                    ["DP-SGD smoke", "Actual privacy budget", "ε 7.9986"],
+                    ["DP-SGD smoke", "Delta", "1.134 × 10⁻⁵"],
+                    ["DP-SGD smoke", "KDDTest+ Recall", "66.20%"],
+                    ["DP-SGD smoke", "KDDTest+ FNR", "33.80%"],
+                    ["DP-SGD smoke", "KDDTest+ F1", "76.80%"],
+                    ["DP-SGD smoke", "KDDTest+ PR-AUC", "91.93%"],
                   ].map((row) => (
-                    <tr key={row[1]}>
+                    <tr key={`${row[0]}-${row[1]}`}>
                       <td>{row[0]}</td>
                       <td>{row[1]}</td>
                       <td>{row[2]}</td>
@@ -163,10 +181,19 @@ export default function Research() {
                 </tbody>
               </table>
               <div className="claim top-space">
-                These numbers are a preliminary non-private utility result. They
-                do not establish differential privacy, MIA resistance, or a
-                privacy–utility tradeoff.
+                The baseline attack result indicates weak measurable leakage
+                under the evaluated threat models; it does not prove privacy.
+                The DP-SGD figures come from one feasibility run and are not a
+                final model selection or leakage-reduction result.
               </div>
+              <a
+                className="text-link"
+                href="https://github.com/tawsif113/privacy-utility-dp-ids"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Research repository <Arrow />
+              </a>
             </div>
           </div>
         </section>
@@ -205,6 +232,11 @@ export default function Research() {
                 <li>
                   The audit covers defined black-box threat models, not every
                   possible form of leakage.
+                </li>
+                <li>
+                  Near-chance overall baseline MIA creates a floor effect: the
+                  final study may establish accounting and utility costs without
+                  supporting a strong empirical leakage-reduction claim.
                 </li>
               </ul>
             </div>
