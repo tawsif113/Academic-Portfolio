@@ -25,7 +25,7 @@
   pdftitle={Academic CV -- Kazi Md. Tawsif Rahman},
   pdfauthor={Kazi Md. Tawsif Rahman},
   pdfsubject={Academic curriculum vitae},
-  pdfkeywords={network security, privacy-preserving machine learning, membership inference, differential privacy}
+  pdfkeywords={AI security, network security, privacy-preserving machine learning, membership inference, differential privacy, trustworthy machine learning}
 }
 
 \titleformat{\section}
@@ -84,52 +84,58 @@ Dhaka, Bangladesh \enspace\textbar\enspace
 
 \section*{Research Summary}
 
-Computer Science graduate and backend systems engineer investigating privacy risk
-in machine-learning-based network intrusion detection. My current independent
-study uses a locked IDS evaluation protocol and shadow-model
-membership-inference auditing; one formally accounted DP-SGD feasibility run is
-complete, and the full privacy-budget comparison is in progress.
+Computer Science graduate and backend systems engineer researching differential
+privacy and membership-inference risk in machine-learning-based network intrusion
+detection. My current independent study uses Opacus-based DP-SGD, explicit
+$(\varepsilon,\delta)$-privacy accounting, and shadow-model membership-inference
+auditing under a locked evaluation protocol. I have completed a condition-matched
+single-run privacy-budget sweep at multiple $\varepsilon$ values; repeated-run
+stability analysis is currently in progress.
 
 \section*{Research Interests}
 
-Network security; privacy-preserving machine learning; membership-inference
-auditing; trustworthy evaluation of security-critical ML; reproducible
-experimental systems.
+AI security; differential privacy; privacy-preserving machine learning;
+membership-inference auditing; trustworthy evaluation of security-critical ML;
+federated learning for security applications; reproducible experimental systems.
 
 \section*{Education}
 
-\entry{Chittagong University of Engineering and Technology (CUET), Bangladesh}{Sep 2024}
+\entry{Chittagong University of Engineering and Technology (CUET), Bangladesh}{July 2024}
 B.Sc. in Computer Science and Engineering \hfill CGPA: 3.59 / 4.00
 
 \section*{Research Experience}
 
-\projectentry{A Reproducible Privacy--Utility Audit for ML-Based Network Intrusion Detection}
+\projectentry{Privacy--Utility Auditing of DP-SGD for ML-Based Network Intrusion Detection}
 {2026 -- Present}{Independent Research Project}
 \begin{itemize}
   \item Designed a locked NSL-KDD binary-classification protocol with a
   70/10/20 target-train/validation/shadow split, validation-only threshold
   selection, and untouched KDDTest+ utility evaluation.
 
-  \item Established archived Random Forest, XGBoost, and MLP IDS baselines. In
-  the pre-MIA comparison, the validation-selected MLP threshold of 0.28
-  produced 76.91\% Recall, 23.09\% FNR, and 84.08\% F1 on KDDTest+.
+  \item Established Random Forest, XGBoost, and MLP baselines. At a
+  validation-selected threshold of 0.28, the selected baseline MLP achieved
+  76.91\% Recall, 23.09\% FNR, and 84.08\% F1 on KDDTest+.
 
-  \item Built five shadow MLPs and evaluated score-only black-box and
-  label-aware audit threat models. The strongest overall held-out attack
-  remained near chance (ROC-AUC $\approx 0.503$), so I treat the floor effect
-  as a limitation, not as evidence that the model is private.
+  \item Built five shadow MLPs and evaluated score-only and label-aware
+  membership-inference attacks. The strongest evaluated non-private attack
+  remained near chance, creating a floor effect that I treat as an evaluation
+  limitation rather than evidence of privacy.
 
-  \item Rebuilt the target MLP in PyTorch and completed one Opacus DP-SGD
-  feasibility run with explicit accounting
-  ($\varepsilon \approx 8.0$, $\delta=1.13\times10^{-5}$). It achieved 66.20\%
-  Recall, 33.80\% FNR, 76.80\% F1, and 91.93\% PR-AUC; this run validates the
-  implementation, not reduced membership leakage.
+  \item Reimplemented the target MLP in PyTorch and integrated Opacus DP-SGD
+  with explicit privacy accounting, clipping, sampling, noise, and training
+  parameters recorded for reproducibility.
 
-  \item In progress: privacy-budget sweep, the same fixed membership audit for
-  each DP condition, bootstrap uncertainty, and repeated runs for selected
-  settings.
+  \item Completed a condition-matched privacy-budget sweep comparing the
+  non-private PyTorch MLP with DP-SGD at actual $\varepsilon=7.9936$, $3.9983$,
+  and $1.9990$. Shadow-selected overall MIA ROC-AUC remained approximately 0.50
+  across all conditions, and paired 95\% confidence intervals did not support a
+  measured overall leakage-reduction claim.
+
+  \item Current work focuses on repeated-run stability analysis for selected
+  settings. The $\varepsilon\approx4$ condition is treated only as a candidate
+  privacy--utility balance point until repeated runs are complete.
 \end{itemize}
-\textit{Code and artifacts:}
+\textit{Code, results, and reproducibility artifacts:}
 \href{https://github.com/tawsif113/privacy-utility-dp-ids}{github.com/tawsif113/privacy-utility-dp-ids}
 
 \section*{Publications}
@@ -184,10 +190,11 @@ B.Sc. in Computer Science and Engineering \hfill CGPA: 3.59 / 4.00
 \begin{tabularx}{\textwidth}{@{}>{\bfseries}p{0.20\textwidth} X@{}}
 Research methods &
 Locked-split experimental design, validation-only threshold selection,
-shadow-model MIA, privacy accounting, bootstrap uncertainty, reproducibility
-manifests, threat-model specification \\[1pt]
+shadow-model membership-inference auditing, privacy accounting, paired bootstrap
+confidence intervals, reproducibility manifests, threat-model specification \\[1pt]
 ML / Privacy &
-Python, scikit-learn, XGBoost, PyTorch, Opacus, DP-SGD, model evaluation \\[1pt]
+Python, scikit-learn, XGBoost, PyTorch, Opacus, DP-SGD, membership-inference
+attacks, model evaluation \\[1pt]
 Backend / Data &
 Java, Spring Boot, Spring Security, JPA/Hibernate, REST APIs, PostgreSQL,
 MongoDB, Redis, RabbitMQ, Flyway \\[1pt]

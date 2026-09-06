@@ -11,12 +11,14 @@ export const metadata: Metadata = {
     template: "%s | Kazi Md. Tawsif Rahman",
   },
   description:
-    "Academic portfolio of Kazi Md. Tawsif Rahman — privacy-preserving machine learning and network security.",
+    "Academic portfolio of Kazi Md. Tawsif Rahman — AI security, differential privacy, membership-inference auditing, and network intrusion detection.",
   keywords: [
+    "AI security",
     "membership inference",
     "differential privacy",
     "network intrusion detection",
     "privacy-preserving machine learning",
+    "trustworthy machine learning",
   ],
   authors: [{ name: "Kazi Md. Tawsif Rahman" }],
   other: { "codex-preview": "development" },

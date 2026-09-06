@@ -9,39 +9,39 @@ export const metadata: Metadata = {
 
 const cases = [
   {
-    type: "Workflow integrity",
-    title: "Reliable state transitions in business workflows",
+    type: "CRM platform",
+    title: "Configurable rule-based routing",
     summary:
-      "A design approach for systems where actions must remain valid under retries, concurrent requests, and partial failure.",
+      "Built routing with priorities, schedules, conditional matching, rotation rules, duplicate checks, and validated field/operator/value conditions.",
     tags: [
-      "Idempotency keys",
-      "Conflict detection",
-      "Transition validation",
-      "Audit history",
+      "Priority rules",
+      "Schedule matching",
+      "Rotation",
+      "Condition validation",
     ],
   },
   {
-    type: "Event-driven systems",
-    title: "Asynchronous notification and delivery pipeline",
+    type: "CRM platform",
+    title: "Efficient ordering and traceable state changes",
     summary:
-      "A broker-backed notification prototype used to study event publication, consumer behavior, delivery semantics, and recovery.",
+      "Replaced full-column Kanban reordering with fixed-length order keys, then added access controls, idempotent moves, transition validation, audit logs, and timelines.",
     tags: [
-      "RabbitMQ",
-      "Event publication",
-      "Acknowledgements",
-      "Redelivery",
+      "Order keys",
+      "Idempotency",
+      "Access control",
+      "Audit logging",
     ],
   },
   {
-    type: "Domain modeling",
-    title: "Order, inventory, and payment service prototype",
+    type: "Ticketing system",
+    title: "Least-loaded routing with cross-store consistency",
     summary:
-      "A compact DDD/CQRS system separating command-side decisions from query projections across interacting domains.",
+      "Implemented least-loaded team assignment with Redis-backed workload counters and maintained PostgreSQL–Redis consistency after ticket creation, reassignment, and resolution.",
     tags: [
-      "Aggregate invariants",
-      "Domain events",
-      "MongoDB command model",
-      "Read projections",
+      "Redis counters",
+      "PostgreSQL",
+      "Assignment rules",
+      "Lifecycle updates",
     ],
   },
 ];
@@ -53,8 +53,8 @@ export default function Systems() {
       <main>
         <Intro
           eyebrow="Selected systems"
-          title="Engineering evidence, chosen for research relevance."
-          description="A small set of systems cases demonstrating implementation discipline: state integrity, asynchronous coordination, data modeling, and reproducible technical investigation."
+          title="Production engineering, chosen for research relevance."
+          description="Sanitized cases from my current backend role showing rule-driven behavior, state integrity, auditability, and consistency across data stores."
         />
         <section className="content shell">
           <div className="two-col">
@@ -90,15 +90,15 @@ export default function Systems() {
             <ul className="plain-list">
               <li>
                 I can turn an experimental protocol into a maintainable
-                implementation rather than a one-off notebook.
+                implementation with explicit validation and traceability.
               </li>
               <li>
                 I treat data lineage, transaction boundaries, configuration,
                 and failure behavior as part of correctness.
               </li>
               <li>
-                I can debug interactions across models, storage, messaging, and
-                application layers.
+                I can reason about correctness across application logic,
+                PostgreSQL state, Redis counters, and retryable operations.
               </li>
               <li>
                 I document technical decisions so another engineer or

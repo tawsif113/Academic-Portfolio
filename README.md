@@ -5,26 +5,24 @@ focused on privacy-preserving machine learning and network security.
 
 ## Pages
 
-- **Home** — research identity, current project, verified baseline evidence,
+- **Home** — research identity, current project, accepted single-run evidence,
   publications, and selected engineering strengths
-- **Research** — question, claim boundary, protocol, status, baseline result,
+- **Research** — question, claim boundary, protocol, completed sweep, current gate,
   and limitations
 - **Publications** — selected peer-reviewed work and research trajectory
-- **Systems** — sanitized engineering cases relevant to experimental systems
-- **CV** — concise HTML overview plus a downloadable academic CV generated
-  from `main.tex`
+- **Systems** — sanitized production-engineering cases relevant to experimental systems
+- **CV** — concise HTML overview plus the current downloadable academic CV
 
 ## Research claim policy
 
-- The locked MIA-ready baseline, five-shadow membership audit, PyTorch parity
-  check, and formally accounted DP-SGD feasibility run are complete.
-- The full DP-SGD privacy-budget sweep, per-model MIA evaluation, and
-  repeated-run analysis remain in progress.
-- Baseline IDS utility is separate from privacy evidence.
-- Formal privacy parameters are reported only for the verified feasibility
-  configuration. No broad claim of reduced membership leakage is made before
-  the full sweep and repeated-run evaluation.
-- Planned experiments are visibly distinguished from verified results.
+- Formal DP-SGD and explicit privacy accounting are implemented for the locked
+  MLP pipeline.
+- Experiments 01–05 are complete; the multi-epsilon comparison is accepted as
+  single-run evidence.
+- Formal privacy guarantees and empirical membership-inference measurements are
+  reported separately.
+- The results do not support a claim that DP-SGD reduced measurable overall
+  leakage, and ε≈4 remains a candidate balance point until repeated runs finish.
 
 ## Development
 
@@ -42,11 +40,11 @@ npm run lint
 npm test
 ```
 
-## Before application use
+## Authoritative sources
 
-The publication author order, contribution statements, ORCID/Scholar links,
-and preferred academic contact details should be rechecked before application
-submission.
+- Research evidence: <https://github.com/tawsif113/privacy-utility-dp-ids>
+- Academic CV: `public/Kazi_Md_Tawsif_Rahman_Academic_CV.pdf`
+- Publication records: DOI links on the Publications page
 
 ## Academic CV
 

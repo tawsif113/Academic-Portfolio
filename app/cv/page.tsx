@@ -35,38 +35,41 @@ export default function Cv() {
         <Intro
           eyebrow="Curriculum vitae"
           title="Research, education, and selected technical work."
-          description="This page provides a concise overview. Download the complete academic CV for publications, research evidence, professional experience, and technical preparation."
+          description="This concise HTML overview reflects my current academic CV. The complete application-ready PDF is available below."
         />
         <section className="content shell cv-grid">
           <aside className="cv-aside">
             <p className="eyebrow">Profile</p>
             <h2>Kazi Md. Tawsif Rahman</h2>
             <p>
-              Software engineer and early-stage researcher working at the
-              intersection of network security, machine learning, and privacy.
+              Computer science graduate and backend systems engineer researching
+              differential privacy and membership-inference risk in
+              machine-learning-based network intrusion detection.
             </p>
             <Tags
               items={[
                 "Dhaka, Bangladesh",
-                "IELTS 7.5",
-                "Open to PhD study",
+                "CUET 2024",
+                "Research project active",
               ]}
             />
-            <a
-              className="button primary cv-download"
-              href="/Kazi_Md_Tawsif_Rahman_Academic_CV.pdf"
-              download="Kazi_Md_Tawsif_Rahman_Academic_CV.pdf"
-            >
-              Download academic CV <Download />
-            </a>
-            <a
-              className="text-link"
-              href="https://github.com/tawsif113"
-              target="_blank"
-              rel="noreferrer"
-            >
-              GitHub profile <Arrow />
-            </a>
+            <div className="cv-links">
+              <a
+                className="button primary cv-download"
+                href="/Kazi_Md_Tawsif_Rahman_Academic_CV.pdf"
+                download="Kazi_Md_Tawsif_Rahman_Academic_CV.pdf"
+              >
+                Download academic CV <Download />
+              </a>
+              <a
+                className="text-link"
+                href="https://github.com/tawsif113/privacy-utility-dp-ids"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Research repository <Arrow />
+              </a>
+            </div>
           </aside>
 
           <div className="cv-main">
@@ -76,10 +79,10 @@ export default function Cv() {
                 date="2026 — Present"
                 title="Privacy–Utility Audit for ML-Based Network Intrusion Detection"
               >
-                Completed a locked NSL-KDD utility baseline, five-shadow
-                membership-inference audit, PyTorch parity check, and formally
-                accounted DP-SGD feasibility run. The full privacy-budget
-                sweep and repeated-run analysis remain in progress.
+                Completed a locked, condition-matched single-run comparison of
+                a non-private PyTorch MLP and Opacus DP-SGD at actual ε=7.9936,
+                3.9983, and 1.9990. Repeated-run stability analysis is now in
+                progress.
               </Entry>
               <Entry
                 date="2024"
@@ -120,10 +123,15 @@ export default function Cv() {
 
             <section>
               <h2>Professional experience</h2>
-              <Entry date="Current" title="Software Engineer · BRAC IT Services">
-                Backend engineering for data-intensive systems, emphasizing
-                workflow correctness, domain modeling, persistence, messaging,
-                and maintainable service design.
+              <Entry date="Dec 2024 — Present" title="CRM platform · BRAC IT Services Ltd.">
+                Built configurable rule-based routing, fixed-length Kanban order
+                keys, access controls, idempotent moves, transition validation,
+                audit logs, and traceable timelines.
+              </Entry>
+              <Entry date="Dec 2024 — Present" title="Ticketing system · BRAC IT Services Ltd.">
+                Built ticket workflow services and least-loaded team routing
+                with Redis-backed counters while maintaining PostgreSQL–Redis
+                workload consistency across lifecycle changes.
               </Entry>
             </section>
 
@@ -133,16 +141,28 @@ export default function Cv() {
                 date="Research"
                 title="Experimental ML and privacy evaluation"
               >
-                Python, scikit-learn, PyTorch, NSL-KDD evaluation, thresholding,
-                membership inference, reproducibility manifests, and DP-SGD
-                methodology.
+                Locked-split design, validation-only threshold selection,
+                shadow-model membership-inference auditing, Opacus privacy
+                accounting, paired bootstrap confidence intervals, and
+                reproducibility manifests.
               </Entry>
               <Entry
                 date="Systems"
                 title="Backend and data-intensive engineering"
               >
-                Java, Spring Boot, PostgreSQL, MongoDB, Redis, RabbitMQ,
-                event-driven design, DDD, CQRS, REST APIs, and Docker.
+                Java, Spring Boot, Spring Security, JPA/Hibernate, REST APIs,
+                PostgreSQL, MongoDB, Redis, RabbitMQ, Flyway, Docker, JUnit 5,
+                and Mockito.
+              </Entry>
+            </section>
+
+            <section>
+              <h2>Awards and achievements</h2>
+              <Entry date="Competitive programming" title="Codeforces Specialist">
+                Rating above 1500.
+              </Entry>
+              <Entry date="2023–2024" title="CUET IUPC finalist">
+                Finalist in both CUET IUPC 2024 and CUET IUPC 2023.
               </Entry>
             </section>
           </div>

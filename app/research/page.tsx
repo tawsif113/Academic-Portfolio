@@ -4,16 +4,25 @@ import { Arrow, Footer, Header, Intro } from "../site-shell";
 export const metadata: Metadata = {
   title: "Research",
   description:
-    "Membership privacy and operational utility in machine-learning-based network intrusion detection.",
+    "A formally accounted DP-SGD privacy-budget sweep with IDS utility and membership-inference auditing.",
 };
 
 const scope = [
   ["Dataset", "NSL-KDD"],
   ["Task", "Binary classification: Normal vs Attack"],
+  ["Compared conditions", "Non-private; DP-SGD ε≈8, ε≈4, and ε≈2"],
   ["Private model", "MLP trained with DP-SGD through Opacus"],
   ["Threat models", "Score-only black-box and label-aware MIA"],
   ["Utility metrics", "Recall, FNR, F1, PR-AUC"],
   ["Privacy metrics", "MIA AUC, advantage, low-FPR TPR, bootstrap CIs"],
+  ["Current gate", "Five-seed repeated-run stability for non-private, ε≈4, and ε≈2"],
+];
+
+const sweep = [
+  ["Non-private", "—", "70.80%", "29.20%", "81.46%", "93.57%", "0.5018"],
+  ["DP-SGD ε≈8", "7.9936", "71.28%", "28.72%", "80.33%", "89.67%", "0.5028"],
+  ["DP-SGD ε≈4", "3.9983", "72.67%", "27.33%", "81.06%", "89.78%", "0.5031"],
+  ["DP-SGD ε≈2", "1.9990", "68.50%", "31.50%", "78.42%", "89.60%", "0.5029"],
 ];
 
 export default function Research() {
@@ -23,8 +32,8 @@ export default function Research() {
       <main>
         <Intro
           eyebrow="Current research"
-          title="Privacy–utility tradeoffs in differentially private network intrusion detection."
-          description="A reproducible empirical study combining IDS-specific utility, shadow-calibrated membership inference, and formally accounted DP-SGD for a tabular intrusion detector."
+          title="Privacy–utility auditing for network intrusion detection."
+          description="An empirical study of whether formally accounted DP-SGD can reduce measurable membership leakage without making a tabular intrusion detector operationally ineffective."
         />
 
         <section className="content shell">
@@ -40,11 +49,10 @@ export default function Research() {
             </div>
             <div>
               <div className="claim">
-                <strong>Claim boundary:</strong> Formal DP-SGD implementation
-                and privacy accounting have been established in a feasibility
-                run. A full privacy–utility frontier and a DP-versus-non-private
-                leakage-reduction claim still require Experiment 05 and
-                repeated-run evidence.
+                <strong>Claim boundary:</strong> Formal DP-SGD and explicit
+                privacy accounting are implemented. The current single-run
+                sweep does not show that DP-SGD reduced measurable overall
+                leakage, and ε≈4 is not yet a confirmed optimum.
               </div>
               <div className="cards">
                 <article>
@@ -100,41 +108,31 @@ export default function Research() {
                   threshold tuning; archived as the pre-MIA reference.
                 </p>
               </article>
-              <article className="active">
+              <article className="done">
                 <small>Completed · accepted</small>
                 <h3>MIA-ready MLP and baseline membership audit</h3>
                 <p>
-                  A locked 70/10/20 split, five shadow models, held-out shadow
-                  calibration, low-FPR metrics, and 1,000 bootstrap repetitions
-                  found weak measurable overall leakage under the evaluated
-                  attacks.
+                  Five shadow MLPs evaluated score-only and label-aware attacks.
+                  The strongest non-private overall attack remained near chance,
+                  establishing a floor effect for later comparisons.
                 </p>
               </article>
               <article className="done">
-                <small>Completed · feasibility passed</small>
-                <h3>DP-SGD feasibility and accounting</h3>
+                <small>Completed · accepted as single-run evidence</small>
+                <h3>DP-SGD feasibility and privacy-budget sweep</h3>
                 <p>
-                  PyTorch parity and Opacus compatibility passed. A five-epoch
-                  DP-SGD smoke run produced explicit PRV-accounted privacy
-                  parameters and reproducible utility outputs.
+                  Opacus DP-SGD was verified, then compared at actual ε=7.9936,
+                  3.9983, and 1.9990 with condition-matched shadows and paired
+                  bootstrap analysis.
                 </p>
               </article>
               <article className="active">
-                <small>Current gate</small>
-                <h3>Full DP-SGD sweep and membership audit</h3>
+                <small>Current gate · execution evidence pending</small>
+                <h3>Repeated-run stability analysis</h3>
                 <p>
-                  Experiment 05 must compare multiple privacy budgets, audit
-                  each trained model with the locked MIA protocol, and preserve
-                  per-run accounting, IDS metrics, raw results, and manifests.
-                </p>
-              </article>
-              <article>
-                <small>Final analysis</small>
-                <h3>Repeated runs and privacy–utility frontier</h3>
-                <p>
-                  Stability analysis will determine whether observed utility
-                  and leakage differences are robust enough to support the
-                  final research claims.
+                  Repeat the non-private, ε≈4, and ε≈2 conditions across five
+                  fixed seeds before selecting a balance point or making a final
+                  privacy–utility conclusion.
                 </p>
               </article>
             </div>
@@ -144,47 +142,41 @@ export default function Research() {
         <section className="content shell">
           <div className="two-col">
             <div className="side">
-              <p className="eyebrow">Verified evidence</p>
-              <h2>What the completed experiments support.</h2>
+              <p className="eyebrow">Accepted single-run evidence</p>
+              <h2>What the completed sweep supports.</h2>
               <p>
-                Every number below is drawn from committed result CSVs or
-                manifests. KDDTest+ thresholds were selected on validation
-                data.
+                Thresholds were selected on validation data. KDDTest+ was used
+                only for final IDS utility evaluation.
               </p>
             </div>
             <div>
-              <table>
-                <thead>
-                  <tr>
-                    <th>Experiment</th>
-                    <th>Verified result</th>
-                    <th>Result</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {[
-                    ["Baseline MIA", "Strongest overall attack AUC", "≈ 0.5029"],
-                    ["PyTorch parity", "F1 absolute difference", "1.26 pp"],
-                    ["DP-SGD smoke", "Actual privacy budget", "ε 7.9986"],
-                    ["DP-SGD smoke", "Delta", "1.134 × 10⁻⁵"],
-                    ["DP-SGD smoke", "KDDTest+ Recall", "66.20%"],
-                    ["DP-SGD smoke", "KDDTest+ FNR", "33.80%"],
-                    ["DP-SGD smoke", "KDDTest+ F1", "76.80%"],
-                    ["DP-SGD smoke", "KDDTest+ PR-AUC", "91.93%"],
-                  ].map((row) => (
-                    <tr key={`${row[0]}-${row[1]}`}>
-                      <td>{row[0]}</td>
-                      <td>{row[1]}</td>
-                      <td>{row[2]}</td>
+              <div className="table-wrap">
+                <table>
+                  <thead>
+                    <tr>
+                      <th>Condition</th>
+                      <th>Actual ε</th>
+                      <th>Recall</th>
+                      <th>FNR</th>
+                      <th>F1</th>
+                      <th>PR-AUC</th>
+                      <th>MIA AUC</th>
                     </tr>
-                  ))}
-                </tbody>
-              </table>
+                  </thead>
+                  <tbody>
+                    {sweep.map((row) => (
+                      <tr key={row[0]}>
+                        {row.map((cell) => <td key={cell}>{cell}</td>)}
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
               <div className="claim top-space">
-                The baseline attack result indicates weak measurable leakage
-                under the evaluated threat models; it does not prove privacy.
-                The DP-SGD figures come from one feasibility run and are not a
-                final model selection or leakage-reduction result.
+                All shadow-selected overall MIA AUC confidence intervals include
+                0.5, and paired overall intervals cross zero. Formal privacy
+                accounting and empirical MIA resistance remain separate
+                conclusions.
               </div>
               <a
                 className="text-link"
@@ -192,7 +184,7 @@ export default function Research() {
                 target="_blank"
                 rel="noreferrer"
               >
-                Research repository <Arrow />
+                Inspect code, results, and manifests <Arrow />
               </a>
             </div>
           </div>
@@ -224,19 +216,18 @@ export default function Research() {
               <h3 className="subhead">Known limitations</h3>
               <ul className="plain-list">
                 <li>NSL-KDD is dated and cannot establish modern deployment validity.</li>
-                <li>The main task is binary rather than multi-class attribution.</li>
+                <li>The accepted sweep currently uses one target-training seed.</li>
                 <li>
-                  Privacy accounting is conditional on the preprocessing
-                  boundary.
+                  The formal guarantee is conditional on fixed preprocessing;
+                  the recorded Opacus runs use secure_mode: false.
                 </li>
                 <li>
-                  The audit covers defined black-box threat models, not every
-                  possible form of leakage.
+                  The near-chance non-private attack creates a floor effect for
+                  empirical leakage-reduction comparisons.
                 </li>
                 <li>
-                  Near-chance overall baseline MIA creates a floor effect: the
-                  final study may establish accounting and utility costs without
-                  supporting a strong empirical leakage-reduction claim.
+                  The study covers one binary task, one MLP architecture, and
+                  the stated black-box attacks—not every form of leakage.
                 </li>
               </ul>
             </div>

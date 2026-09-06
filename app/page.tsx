@@ -35,8 +35,9 @@ export default function Home() {
             </h1>
             <p className="lede">
               I am a computer science graduate and backend systems engineer
-              conducting applied empirical research at the intersection of
-              network intrusion detection, machine learning, and privacy.
+              studying how formal differential privacy changes
+              intrusion-detection utility and measurable training-membership
+              leakage.
             </p>
             <div className="buttons">
               <Link className="button primary" href="/research">
@@ -75,13 +76,13 @@ export default function Home() {
             </p>
             <ol>
               <li>
-                <span>01</span> Network intrusion detection
+                <span>01</span> Formally accounted DP-SGD
               </li>
               <li>
                 <span>02</span> Membership inference
               </li>
               <li>
-                <span>03</span> Formal privacy accounting
+                <span>03</span> Repeated-run validation
               </li>
             </ol>
             <small>
@@ -105,47 +106,47 @@ export default function Home() {
           <article className="featured">
             <div className="featured-copy">
               <div className="status">
-                <span>Advanced implementation</span> NSL-KDD · MIA · DP-SGD
+                <span>Experiment 05 complete</span> NSL-KDD · Binary task · MLP
               </div>
               <h3>
-                Privacy–Utility Tradeoffs in Differentially Private Network
+                Privacy–Utility Auditing of DP-SGD for ML-Based Network
                 Intrusion Detection
               </h3>
               <p>
-                The reproducible pipeline now includes the locked IDS baseline,
-                a five-shadow membership-inference audit, PyTorch parity, and a
-                formally accounted Opacus DP-SGD feasibility run. The full
-                privacy–utility sweep and repeated-run analysis remain the next
-                evidence gate.
+                Under a locked protocol, I completed a condition-matched
+                single-run sweep comparing a non-private PyTorch MLP with
+                Opacus DP-SGD at three privacy budgets. Overall
+                membership-inference estimates remained near chance; repeated
+                runs are now the decision gate.
               </p>
               <Link className="text-link" href="/research">
                 Read the project record <Arrow />
               </Link>
             </div>
             <div className="evidence">
-              <p className="eyebrow">Verified feasibility evidence</p>
+              <p className="eyebrow">Accepted single-run evidence · ε≈4</p>
               <div className="metrics">
                 <div>
-                  <strong>7.999</strong>
+                  <strong>3.9983</strong>
                   <span>Actual epsilon</span>
                 </div>
                 <div>
-                  <strong>1.13e−5</strong>
-                  <span>Delta</span>
+                  <strong>72.67%</strong>
+                  <span>Recall</span>
                 </div>
                 <div>
-                  <strong>66.20%</strong>
-                  <span>DP smoke recall</span>
+                  <strong>27.33%</strong>
+                  <span>FNR</span>
                 </div>
                 <div>
-                  <strong>0.5029</strong>
-                  <span>Baseline MIA AUC</span>
+                  <strong>0.5031</strong>
+                  <span>Overall MIA AUC</span>
                 </div>
               </div>
               <small>
-                Single-run feasibility evidence. It validates implementation
-                and accounting, but does not yet establish a privacy–utility
-                frontier or reduced membership leakage.
+                Candidate balance point only. Its higher Recall came with a
+                higher FPR and lower PR-AUC than the non-private model;
+                repeated-run evidence is pending.
               </small>
             </div>
           </article>
@@ -195,26 +196,26 @@ export default function Home() {
             <div className="systems-grid">
               <article>
                 <span>01</span>
-                <h3>Reliable workflow systems</h3>
+                <h3>Configurable workflow routing</h3>
                 <p>
-                  Transaction boundaries, idempotent operations, transition
-                  rules, and auditable state changes.
+                  Priority, schedule, conditional, rotation, and duplicate
+                  rules with validated field/operator/value conditions.
                 </p>
               </article>
               <article>
                 <span>02</span>
-                <h3>Event-driven delivery</h3>
+                <h3>Traceable state changes</h3>
                 <p>
-                  Asynchronous notification flows designed around broker
-                  semantics, failure handling, and delivery reliability.
+                  Fixed-length order keys, idempotent moves, transition
+                  validation, access controls, and audit timelines.
                 </p>
               </article>
               <article>
                 <span>03</span>
-                <h3>Domain-oriented services</h3>
+                <h3>Consistent workload routing</h3>
                 <p>
-                  Order, inventory, and payment prototypes using DDD, CQRS,
-                  projections, and explicit domain events.
+                  Least-loaded team assignment backed by Redis counters and
+                  PostgreSQL–Redis consistency updates.
                 </p>
               </article>
             </div>
@@ -243,11 +244,9 @@ export default function Home() {
             </Link>
             <a
               className="button secondary"
-              href="https://github.com/tawsif113"
-              target="_blank"
-              rel="noreferrer"
+              href="mailto:tawsifcse113@gmail.com"
             >
-              Contact via GitHub
+              Email me
             </a>
           </div>
         </section>

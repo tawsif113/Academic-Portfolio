@@ -5,13 +5,13 @@ import test from "node:test";
 const developmentPreviewMeta =
   /<meta(?=[^>]*\bname=["']codex-preview["'])(?=[^>]*\bcontent=["']development["'])[^>]*>/i;
 
-test("renders development preview metadata", async () => {
+async function render(path = "/") {
   const workerUrl = new URL("../dist/server/index.js", import.meta.url);
-  workerUrl.searchParams.set("test", `${process.pid}-${Date.now()}`);
+  workerUrl.searchParams.set("test", `${process.pid}-${Date.now()}-${path}`);
   const { default: worker } = await import(workerUrl.href);
 
-  const response = await worker.fetch(
-    new Request("http://localhost/", {
+  return worker.fetch(
+    new Request(`http://localhost${path}`, {
       headers: { accept: "text/html" },
     }),
     {
@@ -24,22 +24,38 @@ test("renders development preview metadata", async () => {
       passThroughOnException() {},
     },
   );
+}
+
+test("renders development preview metadata", async () => {
+  const response = await render();
 
   assert.equal(response.status, 200);
   assert.match(
     response.headers.get("content-type") ?? "",
     /^text\/html\b/i,
   );
-  const html = await response.text();
-  assert.match(html, developmentPreviewMeta);
-  assert.match(
-    html,
-    /href=["']\/Kazi_Md_Tawsif_Rahman_Academic_CV\.pdf["']/i,
-  );
-  assert.match(
-    html,
-    /download=["']Kazi_Md_Tawsif_Rahman_Academic_CV\.pdf["']/i,
-  );
+  assert.match(await response.text(), developmentPreviewMeta);
+});
+
+test("renders the reconciled portfolio content", async () => {
+  const checks = [
+    ["/research", ["3.9983", "Repeated-run stability analysis"]],
+    ["/cv", ["Download academic CV", "Kazi_Md_Tawsif_Rahman_Academic_CV.pdf"]],
+    [
+      "/publications",
+      ["10.5815/ijmsc.2024.03.02", "10.1109/CSITSS64042.2024.10817002"],
+    ],
+    ["/systems", ["Configurable rule-based routing", "Least-loaded routing"]],
+  ];
+
+  for (const [path, markers] of checks) {
+    const response = await render(path);
+    assert.equal(response.status, 200, `${path} should render`);
+    const html = await response.text();
+    for (const marker of markers) {
+      assert.ok(html.includes(marker), `${path} should include ${marker}`);
+    }
+  }
 });
 
 test("packages the downloadable academic CV as a valid PDF", async () => {

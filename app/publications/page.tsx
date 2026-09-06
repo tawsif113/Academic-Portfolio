@@ -22,9 +22,8 @@ export default function Publications() {
               <p className="eyebrow">Peer-reviewed work</p>
               <h2>Selected publications.</h2>
               <p>
-                Publisher links are the authoritative record. Full author order
-                and contribution statements will be reconciled with the final
-                academic CV.
+                Author order and DOI links below match the current academic CV;
+                publisher records remain the authoritative source.
               </p>
             </div>
             <div>
@@ -37,6 +36,9 @@ export default function Publications() {
                   An Automated System for Detecting Property Insurance Fraud
                   Using Machine Learning
                 </h3>
+                <p className="citation-authors">
+                  Kazi Md. Tawsif Rahman and Chowdhury Mahfuzul Hoq
+                </p>
                 <p>
                   An applied classification study addressing fraud detection in
                   property-insurance workflows, including data preparation,
@@ -51,11 +53,11 @@ export default function Publications() {
                 />
                 <a
                   className="text-link"
-                  href="https://www.mecs-press.org/ijmsc/ijmsc-v10-n3/v10n3-2.html"
+                  href="https://doi.org/10.5815/ijmsc.2024.03.02"
                   target="_blank"
                   rel="noreferrer"
                 >
-                  Publisher record <Arrow />
+                  DOI: 10.5815/ijmsc.2024.03.02 <Arrow />
                 </a>
               </article>
               <article className="detail">
@@ -68,6 +70,10 @@ export default function Publications() {
                   Insurance Policy Selection, Fraud Detection, Critical Help,
                   Complaint Features
                 </h3>
+                <p className="citation-authors">
+                  Mahfuzulhoq Chowdhury, Kazi Md. Tawsif Rahman, and Hossain
+                  Ahmad Maruf
+                </p>
                 <p>
                   A research-led application combining insurance awareness,
                   policy support, fraud detection, complaint workflows, and
@@ -82,11 +88,11 @@ export default function Publications() {
                 />
                 <a
                   className="text-link"
-                  href="https://ieeexplore.ieee.org/document/10817002/"
+                  href="https://doi.org/10.1109/CSITSS64042.2024.10817002"
                   target="_blank"
                   rel="noreferrer"
                 >
-                  IEEE record <Arrow />
+                  DOI: 10.1109/CSITSS64042.2024.10817002 <Arrow />
                 </a>
               </article>
             </div>
