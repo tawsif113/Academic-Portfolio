@@ -50,7 +50,7 @@ export default function Cv() {
               items={[
                 "Dhaka, Bangladesh",
                 "CUET 2024",
-                "Research project active",
+                "Paper preparation",
               ]}
             />
             <div className="cv-links">
@@ -79,10 +79,12 @@ export default function Cv() {
                 date="2026 — Present"
                 title="Privacy–Utility Audit for ML-Based Network Intrusion Detection"
               >
-                Completed a locked, condition-matched single-run comparison of
-                a non-private PyTorch MLP and Opacus DP-SGD at actual ε=7.9936,
-                3.9983, and 1.9990. Repeated-run stability analysis is now in
-                progress.
+                Completed a five-seed NSL-KDD comparison of a non-private
+                PyTorch MLP and formally accounted Opacus DP-SGD at ε≈4 and
+                ε≈2, followed by a compact single-seed UNSW-NB15 external
+                validation. Overall MIA remained near chance and the evidence
+                does not support a DP-induced leakage-reduction claim. A
+                venue-neutral first paper draft is now frozen for review.
               </Entry>
               <Entry
                 date="2024"
