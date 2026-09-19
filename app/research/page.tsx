@@ -4,25 +4,30 @@ import { Arrow, Footer, Header, Intro } from "../site-shell";
 export const metadata: Metadata = {
   title: "Research",
   description:
-    "A formally accounted DP-SGD privacy-budget sweep with IDS utility and membership-inference auditing.",
+    "Five-seed NSL-KDD and supplementary UNSW-NB15 evidence for formally accounted DP-SGD, IDS utility, and membership-inference auditing.",
 };
 
 const scope = [
-  ["Dataset", "NSL-KDD"],
+  ["Dataset", "NSL-KDD; supplementary UNSW-NB15 external validation"],
   ["Task", "Binary classification: Normal vs Attack"],
-  ["Compared conditions", "Non-private; DP-SGD ε≈8, ε≈4, and ε≈2"],
+  ["Compared conditions", "Five-seed: non-private, ε≈4, ε≈2; ε≈8 retained as single-seed context"],
   ["Private model", "MLP trained with DP-SGD through Opacus"],
   ["Threat models", "Score-only black-box and label-aware MIA"],
   ["Utility metrics", "Recall, FNR, F1, PR-AUC"],
   ["Privacy metrics", "MIA AUC, advantage, low-FPR TPR, bootstrap CIs"],
-  ["Current gate", "Five-seed repeated-run stability for non-private, ε≈4, and ε≈2"],
+  ["Current gate", "Author/coauthor review and target-venue selection"],
 ];
 
 const sweep = [
-  ["Non-private", "—", "70.80%", "29.20%", "81.46%", "93.57%", "0.5018"],
-  ["DP-SGD ε≈8", "7.9936", "71.28%", "28.72%", "80.33%", "89.67%", "0.5028"],
-  ["DP-SGD ε≈4", "3.9983", "72.67%", "27.33%", "81.06%", "89.78%", "0.5031"],
-  ["DP-SGD ε≈2", "1.9990", "68.50%", "31.50%", "78.42%", "89.60%", "0.5029"],
+  ["Non-private", "—", "70.93%", "29.07%", "80.98%", "93.75%", "0.5023"],
+  ["DP-SGD ε≈4", "3.9983", "71.34%", "28.66%", "80.17%", "89.07%", "0.5030"],
+  ["DP-SGD ε≈2", "1.9990", "70.11%", "29.89%", "79.46%", "89.06%", "0.5033"],
+];
+
+const external = [
+  ["Non-private", "—", "99.88%", "0.12%", "85.36%", "41.84%", "98.16%", "0.4994"],
+  ["DP-SGD ε≈4", "3.9955", "99.98%", "0.02%", "85.25%", "42.38%", "96.85%", "0.5008"],
+  ["DP-SGD ε≈2", "1.9957", "99.99%", "0.01%", "85.24%", "42.40%", "96.77%", "0.5000"],
 ];
 
 export default function Research() {
@@ -33,7 +38,7 @@ export default function Research() {
         <Intro
           eyebrow="Current research"
           title="Privacy–utility auditing for network intrusion detection."
-          description="An empirical study of whether formally accounted DP-SGD can reduce measurable membership leakage without making a tabular intrusion detector operationally ineffective."
+          description="An empirical study of how formally accounted DP-SGD affects IDS utility and measurable membership leakage, with five-seed NSL-KDD evidence and a compact UNSW-NB15 external check."
         />
 
         <section className="content shell">
@@ -50,16 +55,18 @@ export default function Research() {
             <div>
               <div className="claim">
                 <strong>Claim boundary:</strong> Formal DP-SGD and explicit
-                privacy accounting are implemented. The current single-run
-                sweep does not show that DP-SGD reduced measurable overall
-                leakage, and ε≈4 is not yet a confirmed optimum.
+                privacy accounting are implemented. The accepted five-seed
+                NSL-KDD analysis and single-seed UNSW-NB15 check do not show
+                that DP-SGD reduced measurable overall leakage, and no tested
+                epsilon is established as optimal.
               </div>
               <div className="cards">
                 <article>
                   <h3>Research question</h3>
                   <p>
-                    Can formal DP-SGD reduce training-membership leakage while
-                    retaining acceptable Recall and False Negative Rate?
+                    How does formal DP-SGD affect IDS utility, especially
+                    Recall and False Negative Rate, and measurable
+                    training-membership leakage?
                   </p>
                 </article>
                 <article>
@@ -95,8 +102,8 @@ export default function Research() {
               <p className="eyebrow">Research record</p>
               <h2>Evidence before stronger claims.</h2>
               <p>
-                Public status reflects verified artifacts. Planned work remains
-                visibly planned.
+                Public status reflects accepted artifacts. Paper preparation
+                is kept separate from the frozen experimental evidence.
               </p>
             </div>
             <div className="timeline">
@@ -126,13 +133,24 @@ export default function Research() {
                   bootstrap analysis.
                 </p>
               </article>
-              <article className="active">
-                <small>Current gate · execution evidence pending</small>
-                <h3>Repeated-run stability analysis</h3>
+              <article className="done">
+                <small>Completed · accepted</small>
+                <h3>Repeated-run stability and final NSL-KDD analysis</h3>
                 <p>
-                  Repeat the non-private, ε≈4, and ε≈2 conditions across five
-                  fixed seeds before selecting a balance point or making a final
-                  privacy–utility conclusion.
+                  Five fixed target-training seeds were completed for
+                  non-private, ε≈4, and ε≈2. The ε≈4 Recall difference remained
+                  uncertain, while false-positive rate increased and average
+                  precision decreased. Paired MIA AUC comparisons did not show
+                  measured leakage reduction.
+                </p>
+              </article>
+              <article className="done">
+                <small>Completed · supplementary external evidence</small>
+                <h3>UNSW-NB15 external validation and paper preparation</h3>
+                <p>
+                  A constrained single-seed UNSW-NB15 check reproduced the same
+                  broad operating-point tradeoff. A venue-neutral first paper
+                  draft is frozen for author review and venue selection.
                 </p>
               </article>
             </div>
@@ -142,11 +160,12 @@ export default function Research() {
         <section className="content shell">
           <div className="two-col">
             <div className="side">
-              <p className="eyebrow">Accepted single-run evidence</p>
-              <h2>What the completed sweep supports.</h2>
+              <p className="eyebrow">Accepted five-seed NSL-KDD evidence</p>
+              <h2>What the final primary analysis supports.</h2>
               <p>
-                Thresholds were selected on validation data. KDDTest+ was used
-                only for final IDS utility evaluation.
+                Values below are means across five target-training seeds at
+                validation-selected thresholds. KDDTest+ remained final IDS
+                utility evaluation only.
               </p>
             </div>
             <div>
@@ -173,9 +192,10 @@ export default function Research() {
                 </table>
               </div>
               <div className="claim top-space">
-                All shadow-selected overall MIA AUC confidence intervals include
-                0.5, and paired overall intervals cross zero. Formal privacy
-                accounting and empirical MIA resistance remain separate
+                The ε≈4 Recall change is uncertain across seeds, while its FPR
+                is higher and average precision lower than non-private. All
+                paired MIA AUC intervals cross zero. Formal privacy accounting
+                and empirical MIA resistance therefore remain separate
                 conclusions.
               </div>
               <a
@@ -186,6 +206,50 @@ export default function Research() {
               >
                 Inspect code, results, and manifests <Arrow />
               </a>
+            </div>
+          </div>
+        </section>
+
+        <section className="content shell">
+          <div className="two-col">
+            <div className="side">
+              <p className="eyebrow">Supplementary external evidence</p>
+              <h2>Compact UNSW-NB15 validation.</h2>
+              <p>
+                One target-training seed was used under the frozen architecture,
+                threat models, and F2 threshold-selection policy.
+              </p>
+            </div>
+            <div>
+              <div className="table-wrap">
+                <table>
+                  <thead>
+                    <tr>
+                      <th>Condition</th>
+                      <th>Actual ε</th>
+                      <th>Recall</th>
+                      <th>FNR</th>
+                      <th>F1</th>
+                      <th>FPR</th>
+                      <th>Avg. precision</th>
+                      <th>MIA AUC</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {external.map((row) => (
+                      <tr key={row[0]}>
+                        {row.map((cell) => <td key={cell}>{cell}</td>)}
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+              <div className="claim top-space">
+                DP-SGD preserved selected-threshold F1 and Recall closely but
+                increased false-positive burden and reduced average precision.
+                Overall MIA remained near chance. This single-seed check is
+                supplementary and does not establish universal generalisation.
+              </div>
             </div>
           </div>
         </section>
@@ -216,7 +280,10 @@ export default function Research() {
               <h3 className="subhead">Known limitations</h3>
               <ul className="plain-list">
                 <li>NSL-KDD is dated and cannot establish modern deployment validity.</li>
-                <li>The accepted sweep currently uses one target-training seed.</li>
+                <li>
+                  The primary NSL-KDD analysis uses five fixed target-training
+                  seeds; the UNSW-NB15 external validation uses one seed.
+                </li>
                 <li>
                   The formal guarantee is conditional on fixed preprocessing;
                   the recorded Opacus runs use secure_mode: false.
@@ -226,8 +293,9 @@ export default function Research() {
                   empirical leakage-reduction comparisons.
                 </li>
                 <li>
-                  The study covers one binary task, one MLP architecture, and
-                  the stated black-box attacks—not every form of leakage.
+                  The study covers one binary task and one MLP architecture
+                  under the stated score-only and label-aware attacks—not every
+                  form of privacy leakage or deployment condition.
                 </li>
               </ul>
             </div>
