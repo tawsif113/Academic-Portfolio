@@ -39,7 +39,7 @@ test("renders development preview metadata", async () => {
 
 test("renders the reconciled portfolio content", async () => {
   const checks = [
-    ["/research", ["3.9983", "Repeated-run stability analysis"]],
+    ["/research", ["3.9983", "UNSW-NB15 external validation"]],
     ["/cv", ["Download academic CV", "Kazi_Md_Tawsif_Rahman_Academic_CV.pdf"]],
     [
       "/publications",
