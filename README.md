@@ -5,10 +5,10 @@ focused on privacy-preserving machine learning and network security.
 
 ## Pages
 
-- **Home** — research identity, current project, accepted single-run evidence,
+- **Home** — research identity, accepted five-seed evidence, external validation,
   publications, and selected engineering strengths
-- **Research** — question, claim boundary, protocol, completed sweep, current gate,
-  and limitations
+- **Research** — question, claim boundary, five-seed NSL-KDD evidence,
+  supplementary UNSW-NB15 validation, paper-preparation gate, and limitations
 - **Publications** — selected peer-reviewed work and research trajectory
 - **Systems** — sanitized production-engineering cases relevant to experimental systems
 - **CV** — concise HTML overview plus the current downloadable academic CV
@@ -17,12 +17,18 @@ focused on privacy-preserving machine learning and network security.
 
 - Formal DP-SGD and explicit privacy accounting are implemented for the locked
   MLP pipeline.
-- Experiments 01–05 are complete; the multi-epsilon comparison is accepted as
-  single-run evidence.
+- Experiments 01–06, 08, and 09 are complete and accepted under the frozen
+  roadmap.
+- The primary result is a five-seed NSL-KDD comparison of non-private, ε≈4, and
+  ε≈2 conditions; ε≈8 is retained only as single-seed sweep context.
+- A compact single-seed UNSW-NB15 validation is supplementary external evidence,
+  not a universal generalisation claim.
 - Formal privacy guarantees and empirical membership-inference measurements are
   reported separately.
 - The results do not support a claim that DP-SGD reduced measurable overall
-  leakage, and ε≈4 remains a candidate balance point until repeated runs finish.
+  leakage or that ε≈4 is an optimal privacy budget.
+- A venue-neutral first paper draft is frozen for author review and target-venue
+  selection.
 
 ## Development
 
