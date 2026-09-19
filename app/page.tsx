@@ -70,9 +70,9 @@ export default function Home() {
               <i />
             </div>
             <p>
-              Can formal DP-SGD reduce measurable training-membership leakage
-              in a tabular IDS model while retaining operationally acceptable
-              Recall and FNR?
+              How does formally accounted DP-SGD change IDS utility and
+              measurable membership leakage in tabular intrusion detection
+              under fixed, reproducible threat models?
             </p>
             <ol>
               <li>
@@ -82,7 +82,7 @@ export default function Home() {
                 <span>02</span> Membership inference
               </li>
               <li>
-                <span>03</span> Repeated-run validation
+                <span>03</span> Cross-dataset validation
               </li>
             </ol>
             <small>
@@ -106,47 +106,50 @@ export default function Home() {
           <article className="featured">
             <div className="featured-copy">
               <div className="status">
-                <span>Experiment 05 complete</span> NSL-KDD · Binary task · MLP
+                <span>Experiments 08–09 accepted</span> NSL-KDD · UNSW-NB15 · MLP
               </div>
               <h3>
                 Privacy–Utility Auditing of DP-SGD for ML-Based Network
                 Intrusion Detection
               </h3>
               <p>
-                Under a locked protocol, I completed a condition-matched
-                single-run sweep comparing a non-private PyTorch MLP with
-                Opacus DP-SGD at three privacy budgets. Overall
-                membership-inference estimates remained near chance; repeated
-                runs are now the decision gate.
+                Under a locked protocol, I completed a five-seed NSL-KDD
+                comparison of a non-private PyTorch MLP with formally accounted
+                Opacus DP-SGD at ε≈4 and ε≈2, with ε≈8 retained as single-seed
+                sweep context. A compact UNSW-NB15 run provides supplementary
+                external evidence. Overall membership-inference estimates
+                remained near chance, so the evidence does not support a
+                DP-induced leakage-reduction claim.
               </p>
               <Link className="text-link" href="/research">
                 Read the project record <Arrow />
               </Link>
             </div>
             <div className="evidence">
-              <p className="eyebrow">Accepted single-run evidence · ε≈4</p>
+              <p className="eyebrow">Accepted five-seed NSL-KDD evidence · ε≈4</p>
               <div className="metrics">
                 <div>
                   <strong>3.9983</strong>
                   <span>Actual epsilon</span>
                 </div>
                 <div>
-                  <strong>72.67%</strong>
+                  <strong>71.34%</strong>
                   <span>Recall</span>
                 </div>
                 <div>
-                  <strong>27.33%</strong>
+                  <strong>28.66%</strong>
                   <span>FNR</span>
                 </div>
                 <div>
-                  <strong>0.5031</strong>
+                  <strong>0.5030</strong>
                   <span>Overall MIA AUC</span>
                 </div>
               </div>
               <small>
-                Candidate balance point only. Its higher Recall came with a
-                higher FPR and lower PR-AUC than the non-private model;
-                repeated-run evidence is pending.
+                Across five seeds, ε≈4 did not establish a Recall improvement;
+                FPR increased and average precision decreased. Paired MIA AUC
+                intervals crossed zero, so measured leakage reduction is not
+                established.
               </small>
             </div>
           </article>
