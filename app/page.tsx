@@ -82,7 +82,7 @@ export default function Home() {
                 <span>02</span> Membership inference
               </li>
               <li>
-                <span>03</span> Cross-dataset validation
+                <span>03</span> Paper preparation
               </li>
             </ol>
             <small>
