@@ -88,9 +88,10 @@ Computer Science graduate and backend systems engineer researching differential
 privacy and membership-inference risk in machine-learning-based network intrusion
 detection. My current independent study uses Opacus-based DP-SGD, explicit
 $(\varepsilon,\delta)$-privacy accounting, and shadow-model membership-inference
-auditing under a locked evaluation protocol. I have completed a condition-matched
-single-run privacy-budget sweep at multiple $\varepsilon$ values; repeated-run
-stability analysis is currently in progress.
+auditing under a locked evaluation protocol. I completed the five-seed NSL-KDD
+analysis and a constrained single-seed UNSW-NB15 external validation. The
+experimental roadmap is frozen and a venue-neutral first paper draft is under
+author review.
 
 \section*{Research Interests}
 
@@ -112,28 +113,37 @@ B.Sc. in Computer Science and Engineering \hfill CGPA: 3.59 / 4.00
   70/10/20 target-train/validation/shadow split, validation-only threshold
   selection, and untouched KDDTest+ utility evaluation.
 
-  \item Established Random Forest, XGBoost, and MLP baselines. At a
-  validation-selected threshold of 0.28, the selected baseline MLP achieved
-  76.91\% Recall, 23.09\% FNR, and 84.08\% F1 on KDDTest+.
+  \item Established Random Forest, XGBoost, and MLP baselines, then locked a
+  70/10/20 target-train/validation/shadow protocol with validation-only F2
+  threshold selection and untouched KDDTest+ utility evaluation.
 
   \item Built five shadow MLPs and evaluated score-only and label-aware
   membership-inference attacks. The strongest evaluated non-private attack
-  remained near chance, creating a floor effect that I treat as an evaluation
-  limitation rather than evidence of privacy.
+  remained near chance, creating a floor effect that is reported as an
+  evaluation limitation rather than evidence of privacy.
 
   \item Reimplemented the target MLP in PyTorch and integrated Opacus DP-SGD
   with explicit privacy accounting, clipping, sampling, noise, and training
   parameters recorded for reproducibility.
 
-  \item Completed a condition-matched privacy-budget sweep comparing the
-  non-private PyTorch MLP with DP-SGD at actual $\varepsilon=7.9936$, $3.9983$,
-  and $1.9990$. Shadow-selected overall MIA ROC-AUC remained approximately 0.50
-  across all conditions, and paired 95\% confidence intervals did not support a
-  measured overall leakage-reduction claim.
+  \item Completed five target-training seeds for non-private,
+  $\varepsilon\approx4$, and $\varepsilon\approx2$ on NSL-KDD. Mean Recall was
+  70.93\%, 71.34\%, and 70.11\%, respectively; the $\varepsilon\approx4$
+  Recall difference was uncertain, while false-positive rate increased and
+  average precision decreased.
 
-  \item Current work focuses on repeated-run stability analysis for selected
-  settings. The $\varepsilon\approx4$ condition is treated only as a candidate
-  privacy--utility balance point until repeated runs are complete.
+  \item Across the accepted NSL-KDD analysis, paired membership-inference AUC
+  intervals crossed zero, so the evidence does not support a claim that DP-SGD
+  reduced measured overall membership leakage.
+
+  \item Completed a constrained single-seed UNSW-NB15 validation. The private
+  settings preserved selected-threshold F1 and Recall closely but increased the
+  false-positive burden and reduced average precision; overall MIA remained near
+  chance.
+
+  \item The experimental roadmap is complete. A venue-neutral first manuscript
+  is frozen for author review and target-venue selection; no tested epsilon is
+  claimed to be universally optimal.
 \end{itemize}
 \textit{Code, results, and reproducibility artifacts:}
 \href{https://github.com/tawsif113/privacy-utility-dp-ids}{github.com/tawsif113/privacy-utility-dp-ids}
