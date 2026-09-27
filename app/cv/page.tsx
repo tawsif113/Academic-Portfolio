@@ -77,7 +77,7 @@ export default function Cv() {
               <h2>Research experience</h2>
               <Entry
                 date="2026 — Present"
-                title="Privacy–Utility Audit for ML-Based Network Intrusion Detection"
+                title="Privacy–Utility Auditing of DP-SGD for ML-Based Network Intrusion Detection"
               >
                 Completed a condition-matched five-seed NSL-KDD comparison of
                 a non-private PyTorch MLP and Opacus DP-SGD at ε≈4 and ε≈2,
