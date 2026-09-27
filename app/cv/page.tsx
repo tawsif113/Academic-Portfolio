@@ -42,15 +42,15 @@ export default function Cv() {
             <p className="eyebrow">Profile</p>
             <h2>Kazi Md. Tawsif Rahman</h2>
             <p>
-              Computer science graduate and backend systems engineer researching
-              differential privacy and membership-inference risk in
-              machine-learning-based network intrusion detection.
+              Computer science graduate and backend systems engineer studying
+              the privacy and detection trade-offs of DP-SGD for network
+              intrusion detection.
             </p>
             <Tags
               items={[
                 "Dhaka, Bangladesh",
                 "CUET 2024",
-                "Paper preparation",
+                "Manuscript under author review",
               ]}
             />
             <div className="cv-links">
@@ -79,12 +79,13 @@ export default function Cv() {
                 date="2026 — Present"
                 title="Privacy–Utility Audit for ML-Based Network Intrusion Detection"
               >
-                Completed a five-seed NSL-KDD comparison of a non-private
-                PyTorch MLP and formally accounted Opacus DP-SGD at ε≈4 and
-                ε≈2, followed by a compact single-seed UNSW-NB15 external
-                validation. Overall MIA remained near chance and the evidence
-                does not support a DP-induced leakage-reduction claim. A
-                venue-neutral first paper draft is now frozen for review.
+                Completed a condition-matched five-seed NSL-KDD comparison of
+                a non-private PyTorch MLP and Opacus DP-SGD at ε≈4 and ε≈2,
+                with ε≈8 retained only as single-seed context. A supplementary
+                single-seed UNSW-NB15 check kept selected-threshold F1 near
+                0.85. Overall MIA ROC-AUC remained near 0.50, and paired
+                intervals did not support a measured leakage-reduction claim.
+                The manuscript is under author review and has not been submitted.
               </Entry>
               <Entry
                 date="2024"
@@ -143,10 +144,10 @@ export default function Cv() {
                 date="Research"
                 title="Experimental ML and privacy evaluation"
               >
-                Locked-split design, validation-only threshold selection,
-                shadow-model membership-inference auditing, Opacus privacy
-                accounting, paired bootstrap confidence intervals, and
-                reproducibility manifests.
+                Locked-split experimental design, validation-only threshold
+                selection, shadow-model membership-inference auditing, privacy
+                accounting, paired confidence intervals, reproducibility
+                manifests, and threat-model specification.
               </Entry>
               <Entry
                 date="Systems"
