@@ -27,7 +27,17 @@ jobs:
           mv main.pdf public/Kazi_Md_Tawsif_Rahman_Academic_CV.pdf
 
       - name: Commit regenerated CV
-        uses: stefanzweifel/git-auto-commit-action@v5
-        with:
-          commit_message: Build academic CV PDF from latest source
-          file_pattern: public/Kazi_Md_Tawsif_Rahman_Academic_CV.pdf
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          cp public/Kazi_Md_Tawsif_Rahman_Academic_CV.pdf /tmp/Kazi_Md_Tawsif_Rahman_Academic_CV.pdf
+          git fetch origin main
+          git reset --hard origin/main
+          cp /tmp/Kazi_Md_Tawsif_Rahman_Academic_CV.pdf public/Kazi_Md_Tawsif_Rahman_Academic_CV.pdf
+          git add public/Kazi_Md_Tawsif_Rahman_Academic_CV.pdf
+          if git diff --cached --quiet; then
+            echo "CV PDF already up to date"
+            exit 0
+          fi
+          git commit -m "Build academic CV PDF from latest source"
+          git push origin HEAD:main
