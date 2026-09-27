@@ -27,8 +27,8 @@ focused on privacy-preserving machine learning and network security.
   reported separately.
 - The results do not support a claim that DP-SGD reduced measurable overall
   leakage or that ε≈4 is an optimal privacy budget.
-- A venue-neutral first paper draft is frozen for author review and target-venue
-  selection.
+- The analysis is complete; a venue-neutral manuscript draft is under author
+  review and has not been submitted.
 
 ## Development
 
