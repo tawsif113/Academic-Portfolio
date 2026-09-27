@@ -84,14 +84,12 @@ Dhaka, Bangladesh \enspace\textbar\enspace
 
 \section*{Research Summary}
 
-Computer Science graduate and backend systems engineer researching differential
-privacy and membership-inference risk in machine-learning-based network intrusion
-detection. My current independent study uses Opacus-based DP-SGD, explicit
-$(\varepsilon,\delta)$-privacy accounting, and shadow-model membership-inference
-auditing under a locked evaluation protocol. I completed the five-seed NSL-KDD
-analysis and a constrained single-seed UNSW-NB15 external validation. The
-experimental roadmap is frozen and a venue-neutral first paper draft is under
-author review.
+Computer Science graduate and backend systems engineer studying the privacy and
+detection trade-offs of DP-SGD for network intrusion detection. My independent
+study uses Opacus privacy accounting, a five-seed NSL-KDD comparison, a
+supplementary single-seed UNSW-NB15 check, and shadow-calibrated
+membership-inference attacks. The analysis is complete; a venue-neutral
+manuscript draft is under author review and has not been submitted.
 
 \section*{Research Interests}
 
@@ -111,36 +109,31 @@ B.Sc. in Computer Science and Engineering \hfill CGPA: 3.59 / 4.00
 \begin{itemize}
   \item Designed a locked NSL-KDD binary-classification protocol with a
   70/10/20 target-train/validation/shadow split, validation-only F2 threshold
-  selection, and untouched KDDTest+ utility evaluation; RF, XGBoost, and MLP
-  utility baselines are retained as archived context.
+  selection, and untouched KDDTest+ utility evaluation.
 
-  \item Built five shadow MLPs and evaluated score-only and label-aware
-  membership-inference attacks. The strongest evaluated non-private attack
-  remained near chance, creating a floor effect that is reported as an
-  evaluation limitation rather than evidence of privacy.
+  \item Completed a condition-matched five-seed comparison of a non-private
+  PyTorch MLP and Opacus DP-SGD at actual $\varepsilon\approx4$ and 2.
+  Recorded $\delta$, clipping, sampling, noise, epochs, and accountant
+  settings. The earlier $\varepsilon\approx8$ sweep remains single-seed
+  context and is not part of the five-seed comparison.
 
-  \item Reimplemented the target MLP in PyTorch and integrated Opacus DP-SGD
-  with explicit privacy accounting, clipping, sampling, noise, and training
-  parameters recorded for reproducibility.
+  \item On KDDTest+, five-seed mean Recall was 70.93\% non-private, 71.34\%
+  at $\varepsilon\approx4$, and 70.11\% at $\varepsilon\approx2$. The
+  $\varepsilon\approx4$ Recall difference was uncertain; its false-positive
+  rate rose from 5.61\% to 8.76\%, while average precision fell from 93.75\%
+  to 89.07\%.
 
-  \item Completed five target-training seeds for non-private,
-  $\varepsilon\approx4$, and $\varepsilon\approx2$ on NSL-KDD. Mean Recall was
-  70.93\%, 71.34\%, and 70.11\%, respectively; the $\varepsilon\approx4$
-  Recall difference was uncertain, while false-positive rate increased and
-  average precision decreased.
+  \item Evaluated score-only and label-aware membership-inference attacks
+  trained and calibrated on condition-matched shadow models. Overall attack
+  ROC-AUC was near 0.50 even without DP, and paired intervals did not support a
+  measured overall leakage reduction. The DP guarantee is conditional on fixed,
+  non-private preprocessing.
 
-  \item Across the accepted NSL-KDD analysis, paired membership-inference AUC
-  intervals crossed zero, so the evidence does not support a claim that DP-SGD
-  reduced measured overall membership leakage.
-
-  \item Completed a constrained single-seed UNSW-NB15 validation. The private
-  settings preserved selected-threshold F1 and Recall closely but increased the
-  false-positive burden and reduced average precision; overall MIA remained near
-  chance.
-
-  \item The experimental roadmap is complete. A venue-neutral first manuscript
-  is frozen for author review and target-venue selection; no tested epsilon is
-  claimed to be universally optimal.
+  \item Completed a supplementary single-seed UNSW-NB15 validation under the
+  same three model conditions. Selected-threshold F1 stayed near 0.85, while
+  private models had slightly higher false-positive rates and lower average
+  precision. This check does not establish universal cross-dataset
+  generalization.
 \end{itemize}
 \textit{Code, results, and reproducibility artifacts:}
 \href{https://github.com/tawsif113/privacy-utility-dp-ids}{github.com/tawsif113/privacy-utility-dp-ids}
@@ -196,7 +189,7 @@ B.Sc. in Computer Science and Engineering \hfill CGPA: 3.59 / 4.00
 \begin{tabularx}{\textwidth}{@{}>{\bfseries}p{0.20\textwidth} X@{}}
 Research methods &
 Locked-split experimental design, validation-only threshold selection,
-shadow-model membership-inference auditing, privacy accounting, paired bootstrap
+shadow-model membership-inference auditing, privacy accounting, paired
 confidence intervals, reproducibility manifests, threat-model specification \\[1pt]
 ML / Privacy &
 Python, scikit-learn, XGBoost, PyTorch, Opacus, DP-SGD, membership-inference
