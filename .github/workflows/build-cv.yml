@@ -1,0 +1,33 @@
+name: Build academic CV
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - "main.tex"
+      - ".github/workflows/build-cv.yml"
+
+permissions:
+  contents: write
+
+jobs:
+  build-cv:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Compile LaTeX CV
+        uses: xu-cheng/latex-action@v3
+        with:
+          root_file: main.tex
+
+      - name: Move PDF to public download path
+        run: |
+          mv main.pdf public/Kazi_Md_Tawsif_Rahman_Academic_CV.pdf
+
+      - name: Commit regenerated CV
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: Build academic CV PDF from latest source
+          file_pattern: public/Kazi_Md_Tawsif_Rahman_Academic_CV.pdf
