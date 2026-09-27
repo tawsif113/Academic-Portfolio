@@ -15,7 +15,7 @@ const scope = [
   ["Threat models", "Score-only black-box and label-aware MIA"],
   ["Utility metrics", "Recall, FNR, F1, PR-AUC"],
   ["Privacy metrics", "MIA AUC, advantage, low-FPR TPR, bootstrap CIs"],
-  ["Current gate", "Author/coauthor review and target-venue selection"],
+  ["Current gate", "Analysis complete; manuscript under author review and not submitted"],
 ];
 
 const sweep = [
@@ -102,8 +102,9 @@ export default function Research() {
               <p className="eyebrow">Research record</p>
               <h2>Evidence before stronger claims.</h2>
               <p>
-                Public status reflects accepted artifacts. Paper preparation
-                is kept separate from the frozen experimental evidence.
+                Public status reflects the completed analysis. Manuscript
+                review is kept separate from the experimental evidence, and
+                the draft has not been submitted.
               </p>
             </div>
             <div className="timeline">
@@ -146,11 +147,13 @@ export default function Research() {
               </article>
               <article className="done">
                 <small>Completed · supplementary external evidence</small>
-                <h3>UNSW-NB15 external validation and paper preparation</h3>
+                <h3>UNSW-NB15 validation and manuscript review</h3>
                 <p>
-                  A constrained single-seed UNSW-NB15 check reproduced the same
-                  broad operating-point tradeoff. A venue-neutral first paper
-                  draft is frozen for author review and venue selection.
+                  A supplementary single-seed UNSW-NB15 check preserved
+                  selected-threshold F1 near 0.85, while private models had
+                  slightly higher false-positive rates and lower average
+                  precision. The venue-neutral manuscript draft is under author
+                  review and has not been submitted.
                 </p>
               </article>
             </div>
@@ -285,8 +288,9 @@ export default function Research() {
                   seeds; the UNSW-NB15 external validation uses one seed.
                 </li>
                 <li>
-                  The formal guarantee is conditional on fixed preprocessing;
-                  the recorded Opacus runs use secure_mode: false.
+                  The formal guarantee is conditional on fixed, non-private
+                  preprocessing; the recorded Opacus runs use secure_mode:
+                  false.
                 </li>
                 <li>
                   The near-chance non-private attack creates a floor effect for
