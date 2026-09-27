@@ -8,7 +8,7 @@ focused on privacy-preserving machine learning and network security.
 - **Home** — research identity, accepted five-seed evidence, external validation,
   publications, and selected engineering strengths
 - **Research** — question, claim boundary, five-seed NSL-KDD evidence,
-  supplementary UNSW-NB15 validation, paper-preparation gate, and limitations
+  supplementary UNSW-NB15 validation, manuscript-review status, and limitations
 - **Publications** — selected peer-reviewed work and research trajectory
 - **Systems** — sanitized production-engineering cases relevant to experimental systems
 - **CV** — concise HTML overview plus the current downloadable academic CV
