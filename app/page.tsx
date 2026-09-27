@@ -35,9 +35,8 @@ export default function Home() {
             </h1>
             <p className="lede">
               I am a computer science graduate and backend systems engineer
-              studying how formal differential privacy changes
-              intrusion-detection utility and measurable training-membership
-              leakage.
+              studying the privacy and detection trade-offs of DP-SGD for
+              network intrusion detection.
             </p>
             <div className="buttons">
               <Link className="button primary" href="/research">
@@ -82,7 +81,7 @@ export default function Home() {
                 <span>02</span> Membership inference
               </li>
               <li>
-                <span>03</span> Paper preparation
+                <span>03</span> Manuscript under author review
               </li>
             </ol>
             <small>
@@ -106,20 +105,20 @@ export default function Home() {
           <article className="featured">
             <div className="featured-copy">
               <div className="status">
-                <span>Experiments 08–09 accepted</span> NSL-KDD · UNSW-NB15 · MLP
+                <span>Analysis complete</span> NSL-KDD · UNSW-NB15 · MLP
               </div>
               <h3>
                 Privacy–Utility Auditing of DP-SGD for ML-Based Network
                 Intrusion Detection
               </h3>
               <p>
-                Under a locked protocol, I completed a five-seed NSL-KDD
-                comparison of a non-private PyTorch MLP with formally accounted
-                Opacus DP-SGD at ε≈4 and ε≈2, with ε≈8 retained as single-seed
-                sweep context. A compact UNSW-NB15 run provides supplementary
-                external evidence. Overall membership-inference estimates
-                remained near chance, so the evidence does not support a
-                DP-induced leakage-reduction claim.
+                Under a locked protocol, I completed a condition-matched
+                five-seed NSL-KDD comparison of a non-private PyTorch MLP and
+                Opacus DP-SGD at ε≈4 and ε≈2; the earlier ε≈8 sweep remains
+                single-seed context. A supplementary single-seed UNSW-NB15
+                check showed similar utility trade-offs. Overall
+                membership-inference ROC-AUC remained near 0.50, so the
+                evidence does not support a measured leakage-reduction claim.
               </p>
               <Link className="text-link" href="/research">
                 Read the project record <Arrow />
