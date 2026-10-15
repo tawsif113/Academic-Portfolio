@@ -141,7 +141,7 @@ export default function Home() {
                 </div>
                 <div>
                   <strong>0.5030</strong>
-                  <span>Overall MIA AUC</span>
+                  <span>Score-only MIA AUC</span>
                 </div>
               </div>
               <small>
