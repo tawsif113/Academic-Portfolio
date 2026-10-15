@@ -392,6 +392,12 @@ nav a:focus-visible {
 }
 .timeline h3 { margin: 8px 0; font-size: 20px; font-weight: 580; }
 table { width: 100%; border-collapse: collapse; font-size: 13px; }
+.research-figure-grid { display: grid; grid-template-columns: 1fr; gap: 26px; }
+.research-figure { margin: 0; border: 1px solid var(--line); background: white; }
+.research-figure a { display: block; padding: 14px; }
+.research-figure img { width: 100%; height: auto; display: block; }
+.research-figure figcaption { padding: 0 22px 20px; font-size: 13px; line-height: 1.75; color: var(--muted); }
+.research-figure figcaption strong { color: var(--ink); }
 .table-wrap { overflow-x: auto; }
 .table-wrap table { min-width: 760px; }
 th, td { padding: 15px 16px; border-bottom: 1px solid var(--line); text-align: left; }
