@@ -13,7 +13,7 @@ const scope = [
   ["Compared conditions", "Five-seed: non-private, ε≈4, ε≈2; ε≈8 retained as single-seed context"],
   ["Private model", "MLP trained with DP-SGD through Opacus"],
   ["Threat models", "Score-only black-box and label-aware MIA"],
-  ["Utility metrics", "Recall, FNR, F1, PR-AUC"],
+  ["Utility metrics", "Recall, FNR, F1, FPR, average precision"],
   ["Privacy metrics", "MIA AUC, advantage, low-FPR TPR, bootstrap CIs"],
   ["Current gate", "Analysis complete; manuscript under author review and not submitted"],
 ];
@@ -181,8 +181,8 @@ export default function Research() {
                       <th>Recall</th>
                       <th>FNR</th>
                       <th>F1</th>
-                      <th>PR-AUC</th>
-                      <th>MIA AUC</th>
+                      <th>Avg. precision</th>
+                      <th>Score-only MIA AUC</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -216,6 +216,48 @@ export default function Research() {
         <section className="content shell">
           <div className="two-col">
             <div className="side">
+              <p className="eyebrow">Research figures</p>
+              <h2>Inspect the measured trade-offs.</h2>
+              <p>
+                Figures are taken from the accepted Experiment 08 analysis,
+                not hypothetical examples. Follow each link to the source artifact.
+              </p>
+            </div>
+            <div className="research-figure-grid">
+              <figure className="research-figure">
+                <a href="https://github.com/tawsif113/privacy-utility-dp-ids/blob/main/results/final_analysis/figures/09_final_tradeoff_frontier.png" target="_blank" rel="noreferrer">
+                  <img src="https://raw.githubusercontent.com/tawsif113/privacy-utility-dp-ids/main/results/final_analysis/figures/09_final_tradeoff_frontier.png" alt="Accepted final descriptive trade-off frontier for the tested NSL-KDD conditions" loading="lazy" width="1200" height="750" />
+                </a>
+                <figcaption>
+                  <strong>Final descriptive frontier.</strong> This summarizes the evaluated conditions;
+                  it does not establish an optimal epsilon or a universal trade-off.
+                </figcaption>
+              </figure>
+              <figure className="research-figure">
+                <a href="https://github.com/tawsif113/privacy-utility-dp-ids/blob/main/results/final_analysis/figures/10_false_alarms_and_average_precision.png" target="_blank" rel="noreferrer">
+                  <img src="https://raw.githubusercontent.com/tawsif113/privacy-utility-dp-ids/main/results/final_analysis/figures/10_false_alarms_and_average_precision.png" alt="Accepted comparison of false-positive burden and average precision" loading="lazy" width="1200" height="750" />
+                </a>
+                <figcaption>
+                  <strong>False alarms and average precision.</strong> The private
+                  conditions increase false-positive burden and decrease average precision.
+                </figcaption>
+              </figure>
+              <figure className="research-figure">
+                <a href="https://github.com/tawsif113/privacy-utility-dp-ids/blob/main/results/final_analysis/figures/04_mia_auc_vs_epsilon.png" target="_blank" rel="noreferrer">
+                  <img src="https://raw.githubusercontent.com/tawsif113/privacy-utility-dp-ids/main/results/final_analysis/figures/04_mia_auc_vs_epsilon.png" alt="Accepted membership-inference ROC-AUC comparison across evaluated conditions" loading="lazy" width="1200" height="750" />
+                </a>
+                <figcaption>
+                  <strong>Membership-inference ROC-AUC.</strong> Paired differences do
+                  not establish a measured overall leakage reduction.
+                </figcaption>
+              </figure>
+            </div>
+          </div>
+        </section>
+
+        <section className="content shell">
+          <div className="two-col">
+            <div className="side">
               <p className="eyebrow">Supplementary external evidence</p>
               <h2>Compact UNSW-NB15 validation.</h2>
               <p>
@@ -235,7 +277,7 @@ export default function Research() {
                       <th>F1</th>
                       <th>FPR</th>
                       <th>Avg. precision</th>
-                      <th>MIA AUC</th>
+                      <th>Score-only MIA AUC</th>
                     </tr>
                   </thead>
                   <tbody>
