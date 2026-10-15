@@ -21,7 +21,6 @@ export const metadata: Metadata = {
     "trustworthy machine learning",
   ],
   authors: [{ name: "Kazi Md. Tawsif Rahman" }],
-  other: { "codex-preview": "development" },
   icons: { icon: "/favicon.svg", shortcut: "/favicon.svg" },
 };
 
