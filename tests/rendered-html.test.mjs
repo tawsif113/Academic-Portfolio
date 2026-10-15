@@ -26,7 +26,7 @@ async function render(path = "/") {
   );
 }
 
-test("renders development preview metadata", async () => {
+test("does not emit development preview metadata in production", async () => {
   const response = await render();
 
   assert.equal(response.status, 200);
@@ -34,13 +34,13 @@ test("renders development preview metadata", async () => {
     response.headers.get("content-type") ?? "",
     /^text\/html\b/i,
   );
-  assert.match(await response.text(), developmentPreviewMeta);
+  assert.doesNotMatch(await response.text(), developmentPreviewMeta);
 });
 
 test("renders the reconciled portfolio content", async () => {
   const checks = [
-    ["/research", ["3.9983", "UNSW-NB15 external validation"]],
-    ["/cv", ["Download academic CV", "Kazi_Md_Tawsif_Rahman_Academic_CV.pdf"]],
+    ["/research", ["3.9983", "UNSW-NB15 external validation", "Avg. precision", "research-figure-grid"]],
+    ["/cv", ["Download academic CV", "Kazi_Md_Tawsif_Rahman_Academic_CV.pdf", "Selected coursework", "CUET Tech Carnival"]],
     [
       "/publications",
       ["10.5815/ijmsc.2024.03.02", "10.1109/CSITSS64042.2024.10817002"],
