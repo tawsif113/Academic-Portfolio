@@ -54,6 +54,11 @@ npm test
 
 ## Academic CV
 
+The website labels the final NSL-KDD figure metric as average precision (AP), and the displayed membership-inference AUC as score-only MIA AUC. Figures link to accepted Experiment 08 artifacts in `privacy-utility-dp-ids`.
+
+The professional and academic CVs currently disagree about the month of undergraduate completion (September versus July 2024). Check official academic records before changing either date; do not silently infer one from the other.
+
+
 The public download is generated from `main.tex`:
 
 ```bash
