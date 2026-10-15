@@ -98,6 +98,18 @@ export default function Cv() {
             </section>
 
             <section>
+              <h2>Research interests</h2>
+              <Entry date="Current focus" title="Privacy and security of machine learning">
+                AI security, differential privacy, privacy-preserving machine learning,
+                membership-inference auditing, and trustworthy evaluation of security-critical models.
+              </Entry>
+              <Entry date="Future direction" title="Federated learning for security applications">
+                Research interest in privacy-preserving federated learning and
+                reproducible experimental systems; not presented as completed research.
+              </Entry>
+            </section>
+
+            <section>
               <h2>Publications</h2>
               <Entry
                 date="IJMSC · 2024"
@@ -166,6 +178,18 @@ export default function Cv() {
               </Entry>
               <Entry date="2023–2024" title="CUET IUPC finalist">
                 Finalist in both CUET IUPC 2024 and CUET IUPC 2023.
+              </Entry>
+              <Entry date="2020" title="CUET Tech Carnival finalist">
+                Finalist, CUET Tech Carnival 2020.
+              </Entry>
+            </section>
+
+            <section>
+              <h2>Selected coursework</h2>
+              <Entry date="CSE" title="Core computing and AI coursework">
+                Algorithms and Data Structures, Database Systems, Computer
+                Networks, Operating Systems, Software Engineering,
+                Artificial Intelligence, Machine Learning, and Information Security.
               </Entry>
             </section>
           </div>
