@@ -70,6 +70,9 @@ export function Footer() {
             GitHub
           </a>
           <Link href="/research">Research</Link>
+          <a href="https://tawsif-portfolio.flaro-tech.com" target="_blank" rel="noreferrer">
+            Professional portfolio
+          </a>
           <a
             href="/Kazi_Md_Tawsif_Rahman_Academic_CV.pdf"
             download="Kazi_Md_Tawsif_Rahman_Academic_CV.pdf"
